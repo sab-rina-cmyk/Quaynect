@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools - Quayside</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-[#F2F3F5] pb-24 text-gray-900">
+
+    <!-- Header Section -->
+    <header class="px-6 pt-8 pb-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <a href="index.html" class="flex items-center justify-center transition-transform active:scale-95">
+                <ion-icon name="chevron-back-outline" class="w-8 h-8 text-gray-700"></ion-icon>
+            </a>
+            <h1 class="text-3xl font-bold">Resource Booking</h1>
+        </div>
+        <div class="bg-white p-2.5 rounded-xl shadow-soft transition-transform active:scale-95 cursor-pointer">
+            <ion-icon name="bookmark-outline" class="w-7 h-7 text-gray-700"></ion-icon>
+        </div>
+    </header>
+
+    <!-- Content Area -->
+    <main class="px-6">
+        <h2 id="category-title" class="text-2xl font-bold mb-6">Tools</h2>
+
+        <!-- Search and Filter -->
+        <div class="flex items-center gap-3 mb-6">
+            <div class="relative flex-1">
+                <ion-icon name="search-outline" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></ion-icon>
+                <input type="text" placeholder="Search" class="w-full bg-white rounded-2xl py-3.5 pl-12 pr-12 shadow-soft focus:outline-none text-gray-600">
+                <ion-icon name="mic-outline" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></ion-icon>
+            </div>
+            <div class="bg-white p-3.5 rounded-2xl shadow-soft active:scale-95 transition-transform cursor-pointer">
+                <ion-icon name="options-outline" class="w-6 h-6 text-gray-600"></ion-icon>
+            </div>
+        </div>
+
+        <!-- Filter Chips (Horizontal Scroll) -->
+        <div class="flex gap-2 mb-8 overflow-x-auto hide-scrollbar -mx-6 px-6">
+            <button class="bg-white text-gray-700 px-5 py-2.5 rounded-full shadow-soft text-sm font-medium whitespace-nowrap active:scale-95 transition-transform">Spaces</button>
+            <button class="bg-white text-gray-700 px-5 py-2.5 rounded-full shadow-soft text-sm font-medium whitespace-nowrap active:scale-95 transition-transform">Electrical</button>
+            <button class="bg-white text-gray-700 px-5 py-2.5 rounded-full shadow-soft text-sm font-medium whitespace-nowrap active:scale-95 transition-transform border border-blue-100">Hand tools</button>
+            <button class="bg-white text-gray-700 px-5 py-2.5 rounded-full shadow-soft text-sm font-medium whitespace-nowrap active:scale-95 transition-transform">Household</button>
+        </div>
+
+        <!-- Resource Grid -->
+        <div id="resource-grid" class="grid grid-cols-2 gap-4">
+            <!-- Hand Drill -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&q=80&w=200" alt="Hand Drill" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Hand Drill</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Hand Tool Box -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1586864387917-f729d068cb10?auto=format&fit=crop&q=80&w=200" alt="Tool Box" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Hand Tool Box</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Measuring Tape -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1581078426770-6d3362b8bb06?auto=format&fit=crop&q=80&w=200" alt="Measuring Tape" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Measuring Tape</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Garment Steamer -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1542060770-de2634f19159?auto=format&fit=crop&q=80&w=200" alt="Garment Steamer" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Garment Steamer</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Spot Cleaner -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1584622723321-72f53412356c?auto=format&fit=crop&q=80&w=200" alt="Spot Cleaner" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Spot Cleaner</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Iron -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1594451950474-0beebf7c0303?auto=format&fit=crop&q=80&w=200" alt="Iron" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Iron</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Level -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1549419137-72ce66d92550?auto=format&fit=crop&q=80&w=200" alt="Level" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Level</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Extension Cord -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1594911772125-07fc7a2d8d9f?auto=format&fit=crop&q=80&w=200" alt="Extension Cord" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Extension Cord</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+            
+            <!-- Dolly -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=200" alt="Dolly" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Dolly</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Drill Bit Set -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&q=80&w=200" alt="Drill Bit Set" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Drill Bit Set</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Safety Glasses -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1590400037140-1010049e6f80?auto=format&fit=crop&q=80&w=200" alt="Safety Glasses" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Safety Glasses</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+
+            <!-- Sewing Machine -->
+            <div class="bg-white rounded-3xl p-3 shadow-soft flex flex-col active:scale-[0.98] transition-transform">
+                <div class="relative bg-gray-50 rounded-2xl aspect-square mb-3 overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1523293915678-d126868e96f1?auto=format&fit=crop&q=80&w=200" alt="Sewing Machine" class="w-full h-full object-contain">
+                    <button class="absolute top-2 right-2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-blue-500 shadow-sm active:scale-90 transition-transform">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </button>
+                </div>
+                <h3 class="font-semibold text-gray-800 text-[15px] mb-1 px-1">Sewing Machine</h3>
+                <div class="flex justify-between items-center px-1">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <span class="text-[11px] text-gray-400 font-medium tracking-tight">Available</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium">$0.54/hr</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <p class="text-center text-[10px] text-blue-500 font-bold mb-12 mt-12">Quaynect © 2025</p>
+
+    <!-- Fixed Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-8 py-4 flex justify-between items-center shadow-lg">
+        <a href="../index.html"><ion-icon name="home-outline" class="w-7 h-7 text-gray-400"></ion-icon></a>
+        <a href="../community/index.html"><ion-icon name="chatbubble-ellipses-outline" class="w-7 h-7 text-gray-400"></ion-icon></a>
+        <a href="../maintenance/index.html"><ion-icon name="build-outline" class="w-7 h-7 text-gray-400 font-bold"></ion-icon></a>
+        <a href="../profile/index.html"><ion-icon name="person-circle-outline" class="w-7 h-7 text-gray-400"></ion-icon></a>
+    </nav>
+
+    <script>
+        // Use URL params to customize page if needed
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        if (category) {
+            document.getElementById('category-title').innerText = category.charAt(0).toUpperCase() + category.slice(1);
+            document.title = category.charAt(0).toUpperCase() + category.slice(1) + " - Quayside";
+        }
+    </script>
+</body>
+</html>
