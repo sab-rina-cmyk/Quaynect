@@ -3,279 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Booking - Quayside</title>
+    <title>Quayside - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="pb-24 text-gray-900">
 
     <!-- Header Section -->
     <header class="px-6 pt-8 pb-8">
         <div class="flex justify-between items-start">
-            <div class="flex items-center space-x-4">
-                <a href="../index.html" class="flex items-center justify-center transition-transform active:scale-95">
-                    <ion-icon name="chevron-back-outline" class="w-8 h-8 text-gray-700"></ion-icon>
-                </a>
-                <h1 class="text-3xl font-bold">Resource Booking</h1>
+            <div>
+                <h1 class="text-4xl font-bold">Hi Laura!</h1>
+                <p class="text-2xl text-gray-500 font-medium">Good Afternoon.</p>
             </div>
             <div class="flex space-x-4 mt-2">
-                <div class="bg-white p-2 rounded-xl shadow-soft transition-transform active:scale-95 cursor-pointer">
-                    <ion-icon name="qr-code-outline" class="w-7 h-7 text-gray-700"></ion-icon>
-                </div>
+                <ion-icon name="help-circle-outline" class="w-7 h-7 text-gray-700"></ion-icon>
+                <ion-icon name="notifications-outline" class="w-7 h-7 text-gray-700"></ion-icon>
             </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="mt-8 relative">
+            <ion-icon name="search-outline" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></ion-icon>
+            <input type="text" placeholder="Search" class="w-full bg-white rounded-2xl py-3 pl-12 pr-12 shadow-soft focus:outline-none">
+            <ion-icon name="mic-outline" class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></ion-icon>
         </div>
     </header>
 
-    <!-- My Resources Section -->
+    <!-- At a Glance Section -->
     <section class="px-6 mb-8">
-        <h2 class="text-xl font-bold mb-4">My Resources</h2>
-        <div class="grid grid-cols-2 gap-4">
-            <a href="#" class="bg-white rounded-3xl p-6 shadow-soft flex flex-col items-start space-y-4 active:scale-95 transition-transform">
-                <ion-icon name="calendar-outline" class="w-8 h-8 text-blue-500"></ion-icon>
-                <span class="font-semibold text-gray-700">My Bookings</span>
-            </a>
-            <a href="#" class="bg-white rounded-3xl p-6 shadow-soft flex flex-col items-start space-y-4 active:scale-95 transition-transform">
-                <ion-icon name="bookmark-outline" class="w-8 h-8 text-blue-500"></ion-icon>
-                <span class="font-semibold text-gray-700">Bookmarks</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Current Loans Section -->
-    <section class="px-6 mb-8">
-        <h2 class="text-xl font-bold mb-4">Current Loans</h2>
-        <div class="bg-white rounded-3xl shadow-soft overflow-hidden">
-            <a href="#" class="flex items-center justify-between p-6 border-b border-gray-50 active:bg-gray-50 transition-colors">
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-gray-100 rounded-2xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=100" alt="Dolly" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <p class="font-semibold text-gray-800">Dolly</p>
-                        <p class="text-xs text-blue-500">Due Tomorrow @ 1 pm</p>
-                    </div>
-                </div>
-                <ion-icon name="chevron-forward-outline" class="text-gray-300"></ion-icon>
-            </a>
-            <a href="#" class="flex items-center justify-between p-6 active:bg-gray-50 transition-colors">
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-gray-100 rounded-2xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&q=80&w=100" alt="Drill bits" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <p class="font-semibold text-gray-800">Drill bit set</p>
-                        <p class="text-xs text-blue-500">Due Tomorrow @ 1 pm</p>
+        <h2 class="text-xl font-bold mb-4">At a Glance</h2>
+        
+        <div class="bg-white rounded-3xl shadow-soft overflow-hidden relative group">
+            <div id="glance-slider" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+                <!-- Page 1: Announcements -->
+                <div class="flex-none w-full snap-center p-6">
+                    <p class="text-gray-600 font-medium mb-4">Announcements</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between bg-red-500 text-white rounded-2xl p-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-white/20 p-2 rounded-full">
+                                    <ion-icon name="alert-circle-outline" class="w-5 h-5"></ion-icon>
+                                </div>
+                                <span class="font-medium text-sm">Fire Alarm Testing</span>
+                            </div>
+                            <span class="text-[10px] opacity-90">Dec 18 @ 9:00 am</span>
+                        </div>
+                        <div class="flex items-center justify-between border border-blue-100 bg-white rounded-2xl p-4 shadow-sm">
+                            <div class="flex items-center space-x-3">
+                                <div class="text-blue-500">
+                                    <ion-icon name="snow-outline" class="w-6 h-6"></ion-icon>
+                                </div>
+                                <span class="font-medium text-blue-500 text-sm">Quayside Winter Party</span>
+                            </div>
+                            <span class="text-[10px] text-gray-400">Dec 16 @ 6:30 pm</span>
+                        </div>
                     </div>
                 </div>
-                <ion-icon name="chevron-forward-outline" class="text-gray-300"></ion-icon>
-            </a>
-        </div>
-    </section>
 
-    <!-- Categories Section -->
-    <section class="px-6 mb-8">
-        <h2 class="text-xl font-bold mb-4">Categories</h2>
-        <div class="space-y-4">
-            <a href="items.html?category=tools" class="relative block h-32 rounded-3xl shadow-soft overflow-hidden active:scale-[0.98] transition-transform">
-                <img src="https://images.unsplash.com/photo-1530124564312-6f76cb7ff1f0?auto=format&fit=crop&q=80&w=400" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-blue-500/40 flex items-end p-6 justify-between">
-                    <span class="text-white text-xl font-bold">Tools</span>
-                    <ion-icon name="chevron-forward-outline" class="text-white text-2xl"></ion-icon>
+                <!-- Page 2: Payment Overview -->
+                <div class="flex-none w-full snap-center p-6">
+                    <p class="text-gray-600 font-medium mb-4">Payment Overview</p>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm text-gray-400">Current Balance</p>
+                                <p class="text-2xl font-bold">$1,250.00</p>
+                            </div>
+                            <div class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-bold">
+                                PAID
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm text-blue-500 font-medium pt-2">
+                            <span>View Statement</span>
+                            <ion-icon name="chevron-forward-outline" class="w-4 h-4"></ion-icon>
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <a href="items.html?category=recreation" class="relative block h-32 rounded-3xl shadow-soft overflow-hidden active:scale-[0.98] transition-transform">
-                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=400" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-blue-500/40 flex items-end p-6 justify-between">
-                    <span class="text-white text-xl font-bold">Recreation</span>
-                    <ion-icon name="chevron-forward-outline" class="text-white text-2xl"></ion-icon>
-                </div>
-            </a>
-            <a href="items.html?category=spaces" class="relative block h-32 rounded-3xl shadow-soft overflow-hidden active:scale-[0.98] transition-transform">
-                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-blue-500/40 flex items-end p-6 justify-between">
-                    <span class="text-white text-xl font-bold">Spaces</span>
-                    <ion-icon name="chevron-forward-outline" class="text-white text-2xl"></ion-icon>
-                </div>
-            </a>
-        </div>
-    </section>
 
-    <!-- Policies Section -->
-    <section class="px-6 mb-8">
-        <h2 class="text-xl font-bold mb-4">Policies</h2>
-        <div class="bg-white rounded-3xl shadow-soft overflow-hidden">
-            <a href="javascript:void(0)" onclick="openPolicy('damage')" class="flex items-center justify-between p-5 border-b border-gray-50 active:bg-gray-50 transition-colors">
-                <span class="font-medium text-gray-700">Damage Policy</span>
-                <ion-icon name="chevron-forward-outline" class="text-gray-300"></ion-icon>
-            </a>
-            <a href="javascript:void(0)" onclick="openPolicy('late')" class="flex items-center justify-between p-5 border-b border-gray-50 active:bg-gray-50 transition-colors">
-                <span class="font-medium text-gray-700">Late Return Policy</span>
-                <ion-icon name="chevron-forward-outline" class="text-gray-300"></ion-icon>
-            </a>
-            <a href="javascript:void(0)" onclick="openPolicy('usage')" class="flex items-center justify-between p-5 border-b border-gray-50 active:bg-gray-50 transition-colors">
-                <span class="font-medium text-gray-700">Usage Guidelines</span>
-                <ion-icon name="chevron-forward-outline" class="text-gray-300"></ion-icon>
-            </a>
-            <a href="javascript:void(0)" onclick="openPolicy('safety')" class="flex items-center justify-between p-5 border-b border-gray-50 active:bg-gray-50 transition-colors">
-                <span class="font-medium text-gray-700">Safety First</span>
-                <ion-icon name="chevron-forward-outline" class="text-gray-300"></ion-icon>
-            </a>
-            <a href="javascript:void(0)" onclick="openPolicy('support')" class="flex items-center justify-between p-5 active:bg-gray-50 transition-colors">
-                <span class="font-medium text-gray-700">Support</span>
-                <ion-icon name="chevron-forward-outline" class="text-gray-300"></ion-icon>
-            </a>
-        </div>
-    </section>
+                <!-- Page 3: Bookings Overview -->
+                <div class="flex-none w-full snap-center p-6">
+                    <p class="text-gray-600 font-medium mb-4">Bookings Overview</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-4 p-3 bg-gray-50 rounded-2xl">
+                            <div class="bg-blue-500 text-white p-2 rounded-xl">
+                                <ion-icon name="barbell-outline" class="w-5 h-5"></ion-icon>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold">Gym Session</p>
+                                <p class="text-xs text-gray-400">Today, 5:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-3 bg-gray-50 rounded-2xl">
+                            <div class="bg-purple-500 text-white p-2 rounded-xl">
+                                <ion-icon name="cafe-outline" class="w-5 h-5"></ion-icon>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold">Lounge Room</p>
+                                <p class="text-xs text-gray-400">Tomorrow, 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Questions Section -->
-    <section class="px-6 mb-8">
-        <h2 class="text-xl font-bold mb-4">Questions?</h2>
-        <div class="bg-white rounded-3xl p-6 shadow-soft">
-            <p class="text-gray-600 mb-6 font-medium">Feel free to get in touch if you have any questions - Our team is always happy to help.</p>
-            <div class="flex flex-wrap gap-3">
-                <a href="mailto:quayside.resourcebooking@email.com" class="bg-blue-500 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-sm active:opacity-90 transition-opacity">
-                    Email Support
-                </a>
-                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-sm active:opacity-90 transition-opacity">
-                    In Person
-                </a>
-                <a href="tel:000000000" class="bg-white border border-blue-100 text-blue-500 px-4 py-2 rounded-full text-xs font-bold active:bg-blue-50 transition-colors">
-                    000-000-000
-                </a>
+            <!-- Dots -->
+            <div class="flex justify-center space-x-2 pb-6">
+                <div class="glance-dot w-4 h-1.5 bg-gray-800 rounded-full transition-all duration-300"></div>
+                <div class="glance-dot w-1.5 h-1.5 bg-gray-300 rounded-full transition-all duration-300"></div>
+                <div class="glance-dot w-1.5 h-1.5 bg-gray-300 rounded-full transition-all duration-300"></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <p class="text-center text-[10px] text-blue-500 font-bold mb-12">Quaynect © 2025</p>
+    <!-- My Dashboard Section -->
+    <section class="px-6 mb-8">
+        <h2 class="text-xl font-bold mb-4">My Dashboard</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Grid Item 1 -->
+            <a href="payments/index.html" class="bg-white rounded-3xl p-6 shadow-soft flex flex-col items-start space-y-4 active:scale-95 transition-transform">
+                <ion-icon name="card-outline" class="w-8 h-8 text-blue-500"></ion-icon>
+                <span class="font-semibold text-gray-700">Payments</span>
+            </a>
+            <!-- Grid Item 2 -->
+            <a href="community/index.html" class="bg-white rounded-3xl p-6 shadow-soft flex flex-col items-start space-y-4 active:scale-95 transition-transform">
+                <ion-icon name="people-outline" class="w-8 h-8 text-blue-500"></ion-icon>
+                <span class="font-semibold text-gray-700">Community</span>
+            </a>
+            <!-- Grid Item 3 -->
+            <a href="front-desk/index.html" class="bg-white rounded-3xl p-6 shadow-soft flex flex-col items-start space-y-4 active:scale-95 transition-transform">
+                <ion-icon name="book-outline" class="w-8 h-8 text-blue-500"></ion-icon>
+                <span class="font-semibold text-gray-700">Front Desk</span>
+            </a>
+            <!-- Grid Item 4 -->
+            <a href="resource-booking/index.html" class="bg-white rounded-3xl p-6 shadow-soft flex flex-col items-start space-y-4 active:scale-95 transition-transform">
+                <ion-icon name="calendar-outline" class="w-8 h-8 text-blue-500"></ion-icon>
+                <span class="font-semibold text-gray-700 text-sm">Resource Booking</span>
+            </a>
+            <!-- Grid Item 5 -->
+            <a href="maps/index.html" class="bg-white rounded-3xl p-6 shadow-soft flex flex-col items-start space-y-4 active:scale-95 transition-transform">
+                <ion-icon name="map-outline" class="w-8 h-8 text-blue-500"></ion-icon>
+                <span class="font-semibold text-gray-700">Maps</span>
+            </a>
+            <!-- Grid Item 6 -->
+            <a href="points/index.html" class="bg-white rounded-3xl p-6 shadow-soft flex flex-col items-start space-y-4 active:scale-95 transition-transform">
+                <ion-icon name="ticket-outline" class="w-8 h-8 text-blue-500"></ion-icon>
+                <span class="font-semibold text-gray-700">Points</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- What's New Section -->
+    <section class="px-6 mb-24">
+        <h2 class="text-xl font-bold mb-4">What's New?</h2>
+        <div class="space-y-4">
+            <!-- News Item 1 -->
+            <div class="bg-white rounded-3xl p-6 shadow-soft">
+                <p class="text-gray-800 leading-relaxed mb-4">Book club meeting this Thursday to discuss "The Midnight Library". See you all there!</p>
+                <div class="flex items-center text-sm">
+                    <span class="text-blue-400">Posted 3 Hrs Ago</span>
+                    <span class="mx-2 text-gray-300">•</span>
+                    <span class="text-gray-400">12 Replies</span>
+                </div>
+            </div>
+            <!-- News Item 2 -->
+            <div class="bg-white rounded-3xl p-6 shadow-soft text-gray-500">
+                <p class="text-gray-800 leading-relaxed mb-4">Is anyone free over the weekend to help me build an IKEA shelf?</p>
+                <div class="flex items-center text-sm">
+                    <span class="text-blue-400">Posted 8 Hrs Ago</span>
+                    <span class="mx-2 text-gray-300">•</span>
+                    <span class="text-gray-400">3 Replies</span>
+                </div>
+            </div>
+            <!-- News Item 3 -->
+            <div class="bg-white rounded-3xl p-6 shadow-soft">
+                <p class="text-gray-800 leading-relaxed mb-4">Thinking we need a gardening club. Would anybody be interested in joining?</p>
+                <div class="flex items-center text-sm">
+                    <span class="text-blue-400">Posted 9 Hrs Ago</span>
+                    <span class="mx-2 text-gray-300">•</span>
+                    <span class="text-gray-400">28 Replies</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Fixed Bottom Navigation -->
     <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-8 py-4 flex justify-between items-center shadow-lg">
-        <a href="../index.html"><ion-icon name="home-outline" class="w-7 h-7 text-gray-400"></ion-icon></a>
-        <a href="../community/index.html"><ion-icon name="chatbubble-ellipses-outline" class="w-7 h-7 text-gray-400"></ion-icon></a>
-        <a href="../maintenance/index.html"><ion-icon name="build-outline" class="w-7 h-7 text-gray-400"></ion-icon></a>
-        <a href="../profile/index.html"><ion-icon name="person-circle-outline" class="w-7 h-7 text-gray-400"></ion-icon></a>
+        <ion-icon name="home" class="w-7 h-7 text-blue-600"></ion-icon>
+        <ion-icon name="chatbubble-ellipses-outline" class="w-7 h-7 text-gray-400"></ion-icon>
+        <ion-icon name="build-outline" class="w-7 h-7 text-gray-400"></ion-icon>
+        <ion-icon name="person-circle-outline" class="w-7 h-7 text-gray-400"></ion-icon>
     </nav>
 
-    <!-- Policy Modal Overlay -->
-    <div id="policy-modal" class="fixed inset-0 z-[200] hidden flex items-end sm:items-center justify-center p-0 sm:p-6 transition-opacity duration-300">
-        <div id="modal-overlay" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
-        <div id="modal-container" class="relative w-full max-w-xl bg-white rounded-t-[32px] sm:rounded-[32px] p-8 max-h-[90vh] overflow-y-auto transform translate-y-full sm:translate-y-4 opacity-0 transition-all duration-300 ease-out hide-scrollbar">
-            <div class="w-12 h-1 bg-gray-200 rounded-full mx-auto mb-6 sm:hidden"></div>
-            <div class="flex justify-between items-start mb-6">
-                <h3 id="modal-title" class="text-2xl font-bold text-gray-900"></h3>
-                <button onclick="closePolicy()" class="text-gray-400 hover:text-gray-600 transition-colors">
-                    <ion-icon name="close-outline" class="w-8 h-8"></ion-icon>
-                </button>
-            </div>
-            <div id="modal-body" class="text-gray-600 leading-relaxed text-lg space-y-6">
-                <!-- Content injected via JS -->
-            </div>
-            <div class="mt-8 pt-6 border-t border-gray-100">
-                <button onclick="closePolicy()" class="w-full bg-blue-500 text-white font-bold py-4 rounded-2xl active:scale-[0.98] transition-transform shadow-lg shadow-blue-200">
-                    I Understand
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const policies = {
-            damage: {
-                title: 'Damage Policy',
-                content: `
-                    <p>Residents are fully responsible for the condition of all borrowed resources from the moment they are checked out until they are returned and verified by staff.</p>
-                    <p><strong>Reporting Damage:</strong> Any pre-existing damage must be reported within 15 minutes of checkout via the app or at the front desk. Failure to do so may result in the damage being attributed to you.</p>
-                    <p><strong>Repair Costs:</strong> In the event of damage beyond normal wear and tear, the resident will be billed for the full cost of repair or professional replacement.</p>
-                    <p><strong>Missing Parts:</strong> Resources returned with missing components (e.g., drill bits, cables) will be considered "incomplete" and may incur a replacement fee.</p>
-                `
-            },
-            late: {
-                title: 'Late Return Policy',
-                content: `
-                    <p>To ensure all residents have fair access to shared resources, strict return times are enforced.</p>
-                    <p><strong>Grace Period:</strong> There is a 15-minute grace period for all returns. After this time, a late fee of $5 per hour will be applied to your account.</p>
-                    <p><strong>Automatic Extensions:</strong> If no other resident has reserved the item, you may request a one-time 2-hour extension via the app before your original return time.</p>
-                    <p><strong>Repeated Lateness:</strong> Multiple late returns within a 30-day period may result in a temporary suspension of borrowing privileges.</p>
-                `
-            },
-            usage: {
-                title: 'Usage Guidelines',
-                content: `
-                    <p>Please follow these guidelines to keep our resources in top condition for everyone.</p>
-                    <p><strong>Cleaning:</strong> All items must be wiped down and cleaned of debris before return. For kitchen or cleaning equipment, please ensure they are empty and dry.</p>
-                    <p><strong>Location:</strong> Resources must be used within the Quayside premises unless specified otherwise for "Off-site allowed" items.</p>
-                    <p><strong>Instructions:</strong> Always read the digital manual (available on the item page) before using power tools or complex equipment.</p>
-                    <p><strong>Safety first:</strong> Never use equipment in a way that endangers yourself or others.</p>
-                `
-            },
-            safety: {
-                title: 'Safety First',
-                content: `
-                    <p>Your safety is our primary concern while using community resources.</p>
-                    <p><strong>Personal Protective Equipment (PPE):</strong> We recommend wearing appropriate safety gear (gloves, eye protection) when using any tools or hardware.</p>
-                    <p><strong>Training:</strong> For certain specialized equipment (like the wood-shop tools), residents must complete a one-time safety induction before booking.</p>
-                    <p><strong>Faulty Equipment:</strong> If an item feels unsafe or sounds unusual during use, stop immediately and report it via the "Report Issue" button on the loan card.</p>
-                    <p><strong>Emergency:</strong> In case of injury, please contact on-site security or emergency services immediately.</p>
-                `
-            },
-            support: {
-                title: 'Support & Help',
-                content: `
-                    <p>Our team is here to help you get the most out of our shared resources.</p>
-                    <p><strong>Operating Hours:</strong> The Resource Center is staffed daily from 8:00 AM to 10:00 PM.</p>
-                    <p><strong>Technical Support:</strong> If you are having trouble with the app or a smart locker, please use the "In Person" button to page a technician.</p>
-                    <p><strong>Feedback:</strong> We are always looking to expand our library. If there's a tool or resource you'd like to see added, let us know!</p>
-                `
-            }
-        };
-
-        function openPolicy(key) {
-            const modal = document.getElementById('policy-modal');
-            const overlay = document.getElementById('modal-overlay');
-            const container = document.getElementById('modal-container');
-            const title = document.getElementById('modal-title');
-            const body = document.getElementById('modal-body');
-
-            const policy = policies[key];
-            if (!policy) return;
-
-            title.innerText = policy.title;
-            body.innerHTML = policy.content;
-
-            modal.classList.remove('hidden');
-            // Force reflow
-            modal.offsetHeight;
-
-            overlay.classList.add('opacity-100');
-            container.classList.add('opacity-100', 'translate-y-0');
-            container.classList.remove('translate-y-full', 'sm:translate-y-4');
-            
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePolicy() {
-            const modal = document.getElementById('policy-modal');
-            const overlay = document.getElementById('modal-overlay');
-            const container = document.getElementById('modal-container');
-
-            overlay.classList.remove('opacity-100');
-            container.classList.remove('opacity-100', 'translate-y-0');
-            container.classList.add('translate-y-full', 'sm:translate-y-4');
-
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 300);
-        }
-
-        // Close on overlay click
-        document.getElementById('modal-overlay').addEventListener('click', closePolicy);
-    </script>
-
-    <script src="../script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
