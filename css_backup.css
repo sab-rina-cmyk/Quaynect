@@ -238,33 +238,6 @@ body {
     padding: 0 var(--padding-page) 24px;
 }
 
-@keyframes wiggle {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-1deg); }
-    50% { transform: rotate(1deg); }
-    75% { transform: rotate(-0.5deg); }
-    100% { transform: rotate(0deg); }
-}
-
-.dashboard-card.wiggle {
-    animation: wiggle 0.3s ease-in-out infinite;
-    cursor: grab;
-}
-
-/* SortableJS Styles */
-.sortable-ghost {
-    opacity: 0.2;
-    background: #E2E8F0;
-    border: 2px dashed #94A3B8;
-}
-
-.sortable-drag {
-    cursor: grabbing;
-    opacity: 1;
-    transform: scale(1.05); /* Pop effect while dragging */
-    z-index: 999;
-}
-
 .section-header {
     display: flex;
     justify-content: space-between;

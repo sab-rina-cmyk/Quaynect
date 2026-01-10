@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <div class="app-container">
@@ -22,16 +25,10 @@
             </div>
             <div class="header-actions">
                 <button class="icon-btn search-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
+                    <ion-icon name="search-outline"></ion-icon>
                 </button>
                 <button class="icon-btn notif-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                    </svg>
+                    <ion-icon name="notifications-outline"></ion-icon>
                     <span class="notif-badge-dot"></span>
                 </button>
             </div>
@@ -41,9 +38,7 @@
         <section class="greeting-section">
             <h1>Good Afternoon,<br>Laura</h1>
             <div class="weather-widget">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="weather-icon">
-                    <path d="M17.5 19C19.9853 19 22 16.9853 22 14.5C22 12.132 20.177 10.244 17.819 10.034C17.657 6.618 14.826 4 11.5 4C8.484 4 5.875 6.164 5.255 9.153C2.824 9.612 1 11.761 1 14.5C1 16.985 3.015 19 5.5 19H17.5Z"></path>
-                </svg>
+                <ion-icon name="cloud-outline" class="weather-icon"></ion-icon>
                 <span>51°F • Cloudy in Toronto</span>
             </div>
         </section>
@@ -63,16 +58,11 @@
         <div class="notification-banner">
             <div class="banner-content">
                 <div class="banner-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                    </svg>
+                    <ion-icon name="alert-circle-outline"></ion-icon>
                 </div>
                 <span class="banner-text">Rooftop pool closed for the season</span>
             </div>
-            <svg class="chevron-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+            <ion-icon name="chevron-forward-outline" class="chevron-right"></ion-icon>
         </div>
 
         <!-- Dashboard Grid -->
@@ -85,9 +75,7 @@
                 <!-- Digital Key -->
                 <div class="dashboard-card">
                     <div class="icon-circle blue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
-                        </svg>
+                        <ion-icon name="key-outline"></ion-icon>
                     </div>
                     <h4>Digital Key</h4>
                     <p>Tap to unlock</p>
@@ -96,26 +84,16 @@
                 <!-- Amenities -->
                 <div class="dashboard-card">
                     <div class="icon-circle light-blue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                            <path d="M9 16l2 2 4-4"></path>
-                        </svg>
+                        <ion-icon name="calendar-outline"></ion-icon>
                     </div>
-                    <h4>Amenities</h4>
+                    <h4>Booking</h4>
                     <p>Book pool deck</p>
                 </div>
 
                 <!-- Packages -->
                 <div class="dashboard-card">
                     <div class="icon-circle purple">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
+                        <ion-icon name="cube-outline"></ion-icon>
                     </div>
                     <div class="badge">3</div>
                     <h4>Packages</h4>
@@ -125,12 +103,10 @@
                 <!-- Service -->
                 <div class="dashboard-card">
                     <div class="icon-circle grey">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                        </svg>
+                        <ion-icon name="people-outline"></ion-icon>
                     </div>
-                    <h4>Service</h4>
-                    <p>New request</p>
+                    <h4>Communities</h4>
+                    <p>Join events</p>
                 </div>
             </div>
 
@@ -139,23 +115,15 @@
                 <div class="grid-container second-grid">
                     <div class="dashboard-card">
                         <div class="icon-circle green">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
+                             <ion-icon name="gift-outline"></ion-icon>
                         </div>
-                        <h4>Guests</h4>
-                        <p>Manage invites</p>
+                        <h4>Points</h4>
+                        <p>View rewards</p>
                     </div>
 
-                    <div class="dashboard-card">
+                    <div class="dashboard-card" onclick="window.location.href='billing.html'">
                         <div class="icon-circle orange">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                                <line x1="2" y1="10" x2="22" y2="10"></line>
-                            </svg>
+                            <ion-icon name="card-outline"></ion-icon>
                         </div>
                         <h4>Payments</h4>
                         <p>View history</p>
@@ -166,9 +134,7 @@
             <!-- Expand Button -->
             <div class="expand-dashboard">
                 <button class="expand-btn" aria-label="Show more">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
                 </button>
             </div>
         </section>
@@ -188,37 +154,25 @@
                     <p>Relatively busy right now</p>
                 </div>
             </div>
-            <svg class="chevron-right" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+            <ion-icon name="chevron-forward-outline" class="chevron-right"></ion-icon>
         </section>
 
         <!-- Bottom Navigation -->
         <nav class="bottom-nav">
             <div class="nav-item active">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
+                <ion-icon name="home"></ion-icon>
                 <span>Home</span>
             </div>
             <div class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                     <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                </svg>
+                <ion-icon name="construct-outline"></ion-icon>
                 <span>Services</span>
             </div>
             <div class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
                 <span>Chat</span>
             </div>
             <div class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
+                <ion-icon name="person-circle-outline"></ion-icon>
                 <span>Profile</span>
             </div>
         </nav>
