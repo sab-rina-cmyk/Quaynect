@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments - Quaynect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header billing-header">
+            <div class="header-left">
+                <a href="index.html" class="icon-btn back-btn">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </a>
+                <h1>Payments</h1>
+            </div>
+            <div class="header-right">
+                <div class="icon-btn">
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-bar">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" placeholder="Search">
+                <ion-icon name="mic-outline"></ion-icon>
+            </div>
+        </div>
+
+        <!-- Balance Card -->
+        <section class="balance-card">
+            <h2>Total Outstanding<br>Charges</h2>
+            <div class="amount">$0.00</div>
+            <p>You're All Good.</p>
+        </section>
+
+        <!-- Manage Payments -->
+        <section class="section-container">
+            <h3>Manage Payments</h3>
+            <div class="grid-container">
+                <div class="dashboard-card">
+                    <div class="icon-circle blue">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </div>
+                    <h4>Rent</h4>
+                    <p>Pay monthly rent</p>
+                </div>
+                <div class="dashboard-card">
+                    <div class="icon-circle purple">
+                        <ion-icon name="barbell-outline"></ion-icon>
+                    </div>
+                    <h4>Amenities</h4>
+                    <p>Book facilities</p>
+                </div>
+                <div class="dashboard-card">
+                    <div class="icon-circle light-blue">
+                        <ion-icon name="business-outline"></ion-icon>
+                        <!-- Note: 'business-outline' is usually a building/office -->
+                    </div>
+                    <h4>Utilities</h4>
+                    <p>View usage</p>
+                </div>
+                <div class="dashboard-card">
+                    <div class="icon-circle grey">
+                        <ion-icon name="construct-outline"></ion-icon>
+                    </div>
+                    <h4>Maintenance</h4>
+                    <p>Request repairs</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Automatic Payment -->
+        <section class="section-container">
+            <h3>Automatic Payment</h3>
+            <div class="horizontal-scroll">
+                <div class="auto-pay-card">
+                    <div class="card-header">
+                        <span class="pay-title">Rent</span>
+                        <span class="pay-days">– 4 Days</span>
+                    </div>
+                    <div class="pay-amount">$1,650</div>
+                    <div class="pay-date">December 20th</div>
+                </div>
+                <div class="auto-pay-card">
+                    <div class="card-header">
+                        <span class="pay-title">Hydro</span>
+                        <span class="pay-days">– 7 Days</span>
+                    </div>
+                    <div class="pay-amount">$87.54</div>
+                    <div class="pay-date">December 22nd</div>
+                </div>
+                <div class="auto-pay-card">
+                    <div class="card-header">
+                        <span class="pay-title">Car</span>
+                        <span class="pay-days">– 10 Days</span>
+                    </div>
+                    <div class="pay-amount">$250.00</div>
+                    <div class="pay-date">December 25th</div>
+                </div>
+                <div class="auto-pay-card">
+                    <div class="card-header">
+                        <span class="pay-title">Internet</span>
+                        <span class="pay-days">– 12 Days</span>
+                    </div>
+                    <div class="pay-amount">$95.00</div>
+                    <div class="pay-date">December 27th</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Transactions -->
+        <section class="section-container">
+            <h3>Past Transactions</h3>
+            <div class="transactions-card">
+                <div class="trans-header">Last 7 Days</div>
+                
+                <div class="transaction-item">
+                    <div class="trans-info">
+                        <span class="trans-title">Rent - November</span>
+                        <span class="trans-date">November 29, 2025</span>
+                    </div>
+                    <div class="trans-amount">$1,650</div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="trans-info">
+                        <span class="trans-title">Rent - November</span>
+                        <span class="trans-date">November 29, 2025</span>
+                    </div>
+                    <div class="trans-amount">$1,650</div>
+                </div>
+                
+                <div class="transaction-item">
+                    <div class="trans-info">
+                        <span class="trans-title">Rent - November</span>
+                        <span class="trans-date">November 29, 2025</span>
+                    </div>
+                    <div class="trans-amount">$1,650</div>
+                </div>
+
+                <div class="expandable-transactions">
+                    <div class="trans-header" style="margin-top: 24px; margin-bottom: 12px;">Last 30 Days</div>
+                    
+                    <div class="transaction-item">
+                        <div class="trans-info">
+                            <span class="trans-title">Electric Bill</span>
+                            <span class="trans-date">November 25, 2025</span>
+                        </div>
+                        <div class="trans-amount">$120.50</div>
+                    </div>
+                    
+                    <div class="transaction-item">
+                        <div class="trans-info">
+                            <span class="trans-title">Internet</span>
+                            <span class="trans-date">November 24, 2025</span>
+                        </div>
+                        <div class="trans-amount">$89.99</div>
+                    </div>
+                    
+                    <div class="transaction-item">
+                        <div class="trans-info">
+                            <span class="trans-title">Maintenance Fee</span>
+                            <span class="trans-date">November 20, 2025</span>
+                        </div>
+                        <div class="trans-amount">$50.00</div>
+                    </div>
+                </div>
+
+                <div class="view-more">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                    <span>View More</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questions -->
+        <section class="section-container bottom-spacer">
+            <h3>Questions?</h3>
+            <div class="questions-card">
+                <p>Feel free to get in touch if you have any questions - Our team is always happy to help.</p>
+                <div class="contact-pills">
+                    <button class="pill blue">quayside.billing@email.com</button>
+                    <button class="pill blue">In Person</button>
+                    <button class="pill blue">000-000-000</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="nav-item">
+                <ion-icon name="home-outline"></ion-icon>
+                <span>Home</span>
+            </div>
+            <div class="nav-item active" data-page="services"> <!-- Marked active by default on this page -->
+                <ion-icon name="construct"></ion-icon>
+                <span>Services</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                <span>Chat</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <span>Profile</span>
+            </div>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
