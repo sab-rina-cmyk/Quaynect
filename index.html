@@ -73,7 +73,7 @@
             </div>
             <div class="grid-container">
                 <!-- Digital Key -->
-                <div class="dashboard-card">
+                <div class="dashboard-card" data-id="card-key">
                     <div class="icon-circle blue">
                         <ion-icon name="key-outline"></ion-icon>
                     </div>
@@ -81,8 +81,8 @@
                     <p>Tap to unlock</p>
                 </div>
 
-                <!-- Amenities -->
-                <div class="dashboard-card">
+                <!-- Booking & Community -->
+                <div class="dashboard-card" data-id="card-booking">
                     <div class="icon-circle light-blue">
                         <ion-icon name="calendar-outline"></ion-icon>
                     </div>
@@ -91,7 +91,7 @@
                 </div>
 
                 <!-- Packages -->
-                <div class="dashboard-card">
+                <div class="dashboard-card" data-id="card-packages">
                     <div class="icon-circle purple">
                         <ion-icon name="cube-outline"></ion-icon>
                     </div>
@@ -101,19 +101,19 @@
                 </div>
 
                 <!-- Service -->
-                <div class="dashboard-card">
-                    <div class="icon-circle grey">
-                        <ion-icon name="people-outline"></ion-icon>
+                <div class="dashboard-card" data-id="card-resources">
+                    <div class="icon-circle purple">
+                        <ion-icon name="library-outline"></ion-icon>
                     </div>
-                    <h4>Communities</h4>
-                    <p>Join events</p>
+                    <h4>Resources</h4>
+                    <p>Handbooks & more</p>
                 </div>
             </div>
 
             <!-- Extra Cards (Hidden wrapper for animation) -->
             <div class="expandable-wrapper">
                 <div class="grid-container second-grid">
-                    <div class="dashboard-card">
+                    <div class="dashboard-card" data-id="card-points">
                         <div class="icon-circle green">
                              <ion-icon name="gift-outline"></ion-icon>
                         </div>
@@ -121,7 +121,7 @@
                         <p>View rewards</p>
                     </div>
 
-                    <div class="dashboard-card" onclick="window.location.href='billing.html'">
+                    <div class="dashboard-card" data-id="card-payments">
                         <div class="icon-circle orange">
                             <ion-icon name="card-outline"></ion-icon>
                         </div>
@@ -139,22 +139,88 @@
             </div>
         </section>
 
-        <!-- Gym Capacity -->
-        <section class="capacity-card">
-            <div class="capacity-info">
-                <div class="progress-circle" data-percentage="75">
-                    <svg viewBox="0 0 36 36">
-                        <path class="bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                        <path class="meter" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="75, 100" />
-                    </svg>
-                    <span class="percentage">75%</span>
+        <!-- Live Occupancy Section -->
+        <section class="section-container" id="occupancy-section" style="margin-bottom: 80px;">
+            <h3>Live Occupancy</h3>
+            <div class="occupancy-grid">
+                <div class="detailed-occupancy-card">
+                    <div class="occupancy-main">
+                        <div class="occupancy-labels">
+                            <h4>Gym/ Fitness Room</h4>
+                            <div class="live-count">
+                                <span class="count-num">42</span>
+                                <span class="count-label">present</span>
+                            </div>
+                        </div>
+                        <div class="progress-circle" data-percentage="75">
+                            <svg viewBox="0 0 36 36">
+                                <path class="bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="meter" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="75, 100" />
+                            </svg>
+                            <span class="percentage">75%</span>
+                        </div>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-pill busy">Busy</span>
+                        <div class="trend-text">
+                            <ion-icon name="trending-up-outline"></ion-icon>
+                            <span>Peak 6PM</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-content">
-                    <h4>Gym Capacity</h4>
-                    <p>Relatively busy right now</p>
+
+                <div class="detailed-occupancy-card">
+                    <div class="occupancy-main">
+                        <div class="occupancy-labels">
+                            <h4>Work Lounge</h4>
+                            <div class="live-count">
+                                <span class="count-num">12</span>
+                                <span class="count-label">present</span>
+                            </div>
+                        </div>
+                        <div class="progress-circle" data-percentage="25">
+                            <svg viewBox="0 0 36 36">
+                                <path class="bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="meter" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="25, 100" />
+                            </svg>
+                            <span class="percentage">25%</span>
+                        </div>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-pill quiet">Quiet</span>
+                        <div class="trend-text">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>Quiet now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detailed-occupancy-card">
+                    <div class="occupancy-main">
+                        <div class="occupancy-labels">
+                            <h4>Rooftop Pool</h4>
+                            <div class="live-count">
+                                <span class="count-num">0</span>
+                                <span class="count-label">present</span>
+                            </div>
+                        </div>
+                        <div class="progress-circle" data-percentage="0">
+                            <svg viewBox="0 0 36 36">
+                                <path class="bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="meter" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="0, 100" />
+                            </svg>
+                            <span class="percentage">0%</span>
+                        </div>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-pill closed">Closed</span>
+                        <div class="trend-text">
+                            <ion-icon name="cloudy-outline"></ion-icon>
+                            <span>Cloudy Day</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <ion-icon name="chevron-forward-outline" class="chevron-right"></ion-icon>
         </section>
 
         <!-- Bottom Navigation -->
@@ -169,7 +235,7 @@
             </div>
             <div class="nav-item">
                 <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                <span>Chat</span>
+                <span>Messages</span>
             </div>
             <div class="nav-item">
                 <ion-icon name="person-circle-outline"></ion-icon>

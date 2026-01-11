@@ -1,20 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Determine path depth for navigation
+    const knownFolders = ['payments', 'booking', 'digital-key', 'resources', 'points', 'packages'];
+    const isInSubfolder = knownFolders.some(folder => window.location.pathname.includes('/' + folder + '/'));
+    const prefix = isInSubfolder ? '../' : '';
+
     // Navigation functionality
     const navItems = document.querySelectorAll('.nav-item');
     
     // Check if we are on billing page by title or unique element
-    // Actually, on billing.html, 'Services' is hardcoded as active.
+    // Actually, on payments.html, 'Services' is hardcoded as active.
     // However, if the user clicks other tabs, the JS runs.
     
     navItems.forEach(item => {
         item.addEventListener('click', () => {
              // Basic navigation simulation
-             const spanText = item.querySelector('span').innerText;
+             const spanText = item.querySelector('span')?.innerText;
+
              if(spanText === 'Home') {
-                 window.location.href = 'index.html';
-                 return; // Let the page load
+                 window.location.href = prefix + 'index.html';
+                 return;
              }
-             // For a real app, you might have other conditions
+             if(spanText === 'Services') {
+                 window.location.href = prefix + 'services.html';
+                 return;
+             }
 
             // Reset all items: remove active class and ensure outline icon
             navItems.forEach(nav => {
@@ -78,6 +87,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const extraGrid = document.querySelector('.second-grid');
     const expandableWrapper = document.querySelector('.expandable-wrapper');
 
+    // --- Card Order Persistence ---
+    const loadDashboardOrder = () => {
+        const savedOrder = localStorage.getItem('dashboardCardOrder');
+        if (!savedOrder || !mainGrid) return;
+
+        const orderIds = JSON.parse(savedOrder);
+        const allCards = document.querySelectorAll('.dashboard-card[data-id]');
+        const cardMap = {};
+        allCards.forEach(card => cardMap[card.getAttribute('data-id')] = card);
+
+        // Clear and re-append in order
+        orderIds.forEach((id, index) => {
+            const card = cardMap[id];
+            if (card) {
+                if (index < 4) {
+                    mainGrid.appendChild(card);
+                } else if (extraGrid) {
+                    extraGrid.appendChild(card);
+                }
+            }
+        });
+    };
+
+    const saveDashboardOrder = () => {
+        const allCurrentCards = [];
+        if (mainGrid) {
+            Array.from(mainGrid.children).forEach(child => {
+                if (child.hasAttribute('data-id')) allCurrentCards.push(child.getAttribute('data-id'));
+            });
+        }
+        if (extraGrid && !isEditing) { // Only check extra grid if not currently merged
+            Array.from(extraGrid.children).forEach(child => {
+                if (child.hasAttribute('data-id')) allCurrentCards.push(child.getAttribute('data-id'));
+            });
+        }
+        localStorage.setItem('dashboardCardOrder', JSON.stringify(allCurrentCards));
+    };
+
+    loadDashboardOrder();
+
     let isEditing = false;
     let sortableInstance = null;
 
@@ -122,13 +171,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 3. Init Sortable (Single Grid)
                 if (typeof Sortable !== 'undefined' && mainGrid) {
                     sortableInstance = new Sortable(mainGrid, {
-                        animation: 300,
-                        delay: 0, 
-                        touchStartThreshold: 5, // Small threshold to distinguish click/drag
-                        forceFallback: true, // CRITICAL: Ensures consistent drag visual across all browsers
+                        animation: 350,
+                        easing: "cubic-bezier(0.2, 0, 0, 1)", // iOS-like easing
+                        delay: 50, // Slight delay to feel more intentional
+                        touchStartThreshold: 5,
+                        forceFallback: true,
                         fallbackClass: 'sortable-drag',
                         ghostClass: 'sortable-ghost',
-                        fallbackOnBody: true, // Prevents clipping
+                        chosenClass: 'sortable-chosen',
+                        fallbackOnBody: true,
                         onStart: (evt) => {
                             evt.item.classList.remove('wiggle');
                             document.body.classList.add('dragging-active');
@@ -136,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         onEnd: (evt) => {
                             if (isEditing) evt.item.classList.add('wiggle');
                             document.body.classList.remove('dragging-active');
+                            saveDashboardOrder();
                         }
                     });
                 }
@@ -161,6 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         cardsToMove.forEach(card => extraGrid.appendChild(card));
                     }
                 }
+
+                saveDashboardOrder();
 
                 // 4. Update wrapper height to match new content flow
                 // Since we are still expanded, we just update the explicit height
@@ -200,7 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const banner = document.querySelector('.notification-banner');
     if (banner) {
         banner.addEventListener('click', () => {
-            console.log('Opening notification details');
+            banner.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                window.location.href = prefix + 'booking/index.html#occupancy-section';
+            }, 100);
         });
     }
 
@@ -230,6 +287,239 @@ document.addEventListener('DOMContentLoaded', () => {
                 expandableTransactions.style.opacity = "0";
                 viewMoreBtn.querySelector('span').textContent = "View More";
             }
+        });
+    }
+
+    // Utilities Card Navigation
+    const utilitiesCard = document.getElementById('utilities-card');
+    if (utilitiesCard) {
+        utilitiesCard.addEventListener('click', (e) => {
+            e.preventDefault();
+            utilitiesCard.style.transform = 'scale(0.96)';
+            setTimeout(() => {
+                window.location.href = prefix + 'payments/utilities.html';
+            }, 100);
+        });
+    }
+
+    // Navigation for Insurance
+    const insurancePill = document.getElementById('insurance-pill');
+    const insuranceCard = document.getElementById('insurance-card');
+    
+    const navigateToInsurance = (e) => {
+        e.preventDefault();
+        const target = e.currentTarget;
+        target.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+            window.location.href = prefix + 'payments/insurance.html';
+        }, 100);
+    };
+
+    if (insurancePill) insurancePill.addEventListener('click', navigateToInsurance);
+    if (insuranceCard) insuranceCard.addEventListener('click', navigateToInsurance);
+
+    // Resources Navigation
+    const resourcesCardId = document.querySelector('[data-id="card-resources"]');
+    const billingResourcesCard = document.getElementById('resources-card');
+    const navigateToResources = (e) => {
+        const target = e.currentTarget;
+        target.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+            window.location.href = prefix + 'resources/index.html';
+        }, 100);
+    };
+    if (resourcesCardId) resourcesCardId.addEventListener('click', navigateToResources);
+    if (billingResourcesCard) billingResourcesCard.addEventListener('click', navigateToResources);
+
+    // Booking Navigation
+    const bookingCardId = document.querySelector('[data-id="card-booking"]');
+    const bookingCard = document.getElementById('booking-card');
+    const navigateToBooking = (e) => {
+        const target = e.currentTarget;
+        target.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+            window.location.href = prefix + 'booking/index.html';
+        }, 100);
+    };
+    if (bookingCardId) bookingCardId.addEventListener('click', navigateToBooking);
+    if (bookingCard) bookingCard.addEventListener('click', navigateToBooking);
+
+    // Payments Navigation
+    const paymentsCard = document.getElementById('payments-card');
+    if (paymentsCard) {
+        paymentsCard.addEventListener('click', (e) => {
+            e.preventDefault();
+            paymentsCard.style.transform = 'scale(0.96)';
+            setTimeout(() => {
+                window.location.href = prefix + 'payments/index.html';
+            }, 100);
+        });
+    }
+
+    // Maintenance
+    const maintenanceCard = document.getElementById('maintenance-card');
+    if (maintenanceCard) {
+        maintenanceCard.addEventListener('click', () => {
+            maintenanceCard.style.transform = 'scale(0.96)';
+            setTimeout(() => {
+                window.location.href = prefix + 'payments/maintenance.html';
+            }, 100);
+        });
+    }
+
+    // New 6-Folder Main Entry Points
+    const keyCard = document.querySelector('[data-id="card-key"]');
+    if (keyCard) {
+        keyCard.addEventListener('click', () => {
+            keyCard.style.transform = 'scale(0.96)';
+            setTimeout(() => window.location.href = prefix + 'digital-key/index.html', 100);
+        });
+    }
+
+    const pointsCard = document.querySelector('[data-id="card-points"]');
+    const pointsCardSub = document.querySelector('[data-id="card-points"]'); // redundant but for safety
+    if (pointsCard) {
+        pointsCard.addEventListener('click', () => {
+            pointsCard.style.transform = 'scale(0.96)';
+            setTimeout(() => window.location.href = prefix + 'points/index.html', 100);
+        });
+    }
+
+    const packagesCard = document.querySelector('[data-id="card-packages"]');
+    if (packagesCard) {
+        packagesCard.addEventListener('click', () => {
+            packagesCard.style.transform = 'scale(0.96)';
+            setTimeout(() => window.location.href = prefix + 'packages/index.html', 100);
+        });
+    }
+
+    const dashboardPaymentsCard = document.querySelector('[data-id="card-payments"]');
+    if (dashboardPaymentsCard) {
+        dashboardPaymentsCard.addEventListener('click', () => {
+            dashboardPaymentsCard.style.transform = 'scale(0.96)';
+            setTimeout(() => window.location.href = prefix + 'payments/index.html', 100);
+        });
+    }
+
+    // Gym Capacity Card (Homepage) -> Occupancy Section
+    const gymCapacityCard = document.querySelector('.capacity-card');
+    if (gymCapacityCard) {
+        gymCapacityCard.addEventListener('click', () => {
+            gymCapacityCard.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                window.location.href = prefix + 'index.html#occupancy-section';
+            }, 100);
+        });
+    }
+
+    // Rent Navigation (Legacy naming)
+    const rentCard = document.getElementById('rent-card');
+    const rentPill = document.getElementById('rent-pill');
+    const navigateToRent = (e) => {
+        e.preventDefault();
+        const target = e.currentTarget;
+        target.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+            window.location.href = prefix + 'payments/index.html';
+        }, 100);
+    };
+    if (rentCard) rentCard.addEventListener('click', navigateToRent);
+    if (rentPill) rentPill.addEventListener('click', navigateToRent);
+
+    // Payments Option Sub-pages
+    const optionBank = document.getElementById('option-bank');
+    const optionTransfer = document.getElementById('option-transfer');
+    const optionAutopay = document.getElementById('option-autopay');
+    const optionHistory = document.getElementById('option-history');
+
+    if (optionBank) {
+        optionBank.addEventListener('click', () => {
+            optionBank.style.transform = 'scale(0.98)';
+            setTimeout(() => window.location.href = prefix + 'payments/bank.html', 100);
+        });
+    }
+    if (optionTransfer) {
+        optionTransfer.addEventListener('click', () => {
+            optionTransfer.style.transform = 'scale(0.98)';
+            setTimeout(() => window.location.href = prefix + 'payments/transfer.html', 100);
+        });
+    }
+    if (optionAutopay) {
+        optionAutopay.addEventListener('click', () => {
+            optionAutopay.style.transform = 'scale(0.98)';
+            setTimeout(() => window.location.href = prefix + 'payments/autopay.html', 100);
+        });
+    }
+    if (optionHistory) {
+        optionHistory.addEventListener('click', () => {
+            optionHistory.style.transform = 'scale(0.98)';
+            setTimeout(() => window.location.href = prefix + 'payments/history.html', 100);
+        });
+    }
+
+    // Breakdown Actions
+    const rentPayNow = document.getElementById('rent-pay-now');
+    const rentViewInvoices = document.getElementById('rent-view-invoices');
+
+    if (rentPayNow) {
+        rentPayNow.addEventListener('click', () => {
+             rentPayNow.style.transform = 'scale(0.95)';
+             setTimeout(() => window.location.href = prefix + 'payments/bank.html', 100);
+        });
+    }
+    if (rentViewInvoices) {
+        rentViewInvoices.addEventListener('click', () => {
+             rentViewInvoices.style.transform = 'scale(0.95)';
+             setTimeout(() => window.location.href = prefix + 'payments/history.html', 100);
+        });
+    }
+
+    // --- Universal Search Functionality ---
+    const searchInput = document.querySelector('.search-bar input');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            
+            // List of all possible searchable items across pages
+            const itemSelectors = [
+                '.dashboard-card',
+                '.option-item',
+                '.service-action-item',
+                '.transaction-item',
+                '.maintenance-request-card',
+                '.bill-line-item',
+                '.upcoming-card',
+                '.history-item',
+                '.auto-pay-card',
+                '.account-picker'
+            ];
+
+            const allItems = document.querySelectorAll(itemSelectors.join(', '));
+            
+            allItems.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Handle section headers visibility
+            const sections = document.querySelectorAll('section.section-container, .dashboard-section');
+            sections.forEach(section => {
+                const visibleItems = section.querySelectorAll(itemSelectors.join(', '));
+                let hasVisible = false;
+                visibleItems.forEach(i => {
+                    if (i.style.display !== 'none') hasVisible = true;
+                });
+
+                // If a section has searchable items and none are visible, hide the section
+                if (visibleItems.length > 0) {
+                    section.style.display = hasVisible ? '' : 'none';
+                }
+            });
         });
     }
 });
