@@ -5,7 +5,7 @@
     "category": "Tools",
     "tier": 2,
     "availability": true,
-    "image": "Tools/drill.jpeg",
+    "image": "tools/drill.jpeg",
     "desc": "18V Cordless power drill for drilling holes and driving screws.",
     "instructions": "Insert the battery into the base. Select your drill bit and tighten the chuck. Adjust the torque setting and use the trigger to start drilling slowly."
   },
@@ -15,7 +15,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "Tools/tool box.jpeg",
+    "image": "tools/tool box.jpeg",
     "desc": "General purpose kit containing hammer, pliers, screwdrivers, and wrenches.",
     "instructions": "Open the latches on the front to access the main compartment. Smaller bits and screws are located in the top organizer trays."
   },
@@ -35,7 +35,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": false,
-    "image": "Tools/dolly.jpeg",
+    "image": "tools/dolly.jpeg",
     "desc": "Convertible hand truck for moving heavy boxes or furniture.",
     "instructions": "Slide the bottom plate under your load. Tilt the dolly back towards you while keeping your foot on the axle for leverage."
   },
@@ -45,7 +45,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "Tools/garment-steamer.jpeg",
+    "image": "tools/garment-steamer.jpeg",
     "desc": "Portable steamer for removing wrinkles from fabric and upholstery.",
     "instructions": "Fill the water tank to the max line. Plug in and wait 30 seconds for steam. Run the nozzle vertically over hung garments."
   },
@@ -55,7 +55,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "Tools/iron.jpeg",
+    "image": "tools/iron.jpeg",
     "desc": "Includes steam iron and foldable ironing board.",
     "instructions": "Unfold the board and lock the legs. Fill iron with water, select heat setting, and wait for indicator light to turn off."
   },
@@ -74,7 +74,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "Tools/level.jpeg",
+    "image": "tools/level.jpeg",
     "desc": "24-inch I-beam spirit level."
   },
   {
@@ -83,7 +83,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "Tools/extension-cord.jpeg",
+    "image": "tools/extension-cord.jpeg",
     "desc": "50ft indoor/outdoor heavy-duty power extension cable."
   },
   {
@@ -92,7 +92,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "Tools/drill-bit-set.jpeg",
+    "image": "tools/drill-bit-set.jpeg",
     "desc": "Assorted kit including masonry, wood, and metal bits."
   },
   {
@@ -101,7 +101,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "Tools/safety-goggles.jpeg",
+    "image": "tools/safety-goggles.jpeg",
     "desc": "ANSI-rated clear protective eyewear."
   },
   {
@@ -128,7 +128,7 @@
     "category": "Recreation",
     "tier": 1,
     "availability": true,
-    "image": "Recreation/badminton-duo-set.png",
+    "image": "recreation/badminton-duo-set.png",
     "desc": "Includes two rackets and a tube of birdies.",
     "instructions": "Remove rackets from the sleeve. Don't hit the birdies too hard near walls. Return all birdies to the tube after play."
   },
@@ -138,7 +138,7 @@
     "category": "Recreation",
     "tier": 1,
     "availability": true,
-    "image": "Recreation/soccer-ball.jpeg",
+    "image": "recreation/soccer-ball.jpeg",
     "desc": "Standard size 5 soccer ball.",
     "instructions": "Ensure the ball is properly inflated. Use only on soft ground or designated pitches. Wipe clean if used in mud."
   },
@@ -148,7 +148,7 @@
     "category": "Recreation",
     "tier": 1,
     "availability": false,
-    "image": "Recreation/spikebell-set.jpeg",
+    "image": "recreation/spikeball-set.jpeg",
     "desc": "Standard roundnet kit with net, frame, and 3 balls.",
     "instructions": "Assemble the yellow rim and attach the net tightly. Bounce the ball off the net to play. Disassemble carefully to store."
   },
@@ -168,7 +168,7 @@
     "category": "Recreation",
     "tier": 1,
     "availability": true,
-    "image": "Recreation/deck-of-cards.jpeg",
+    "image": "recreation/deck-of-cards.jpeg",
     "desc": "Standard 52-card deck (Bicycle brand).",
     "instructions": "Shuffle and deal. Please count all 52 cards before returning to the pack."
   },
@@ -178,7 +178,7 @@
     "category": "Recreation",
     "tier": 1,
     "availability": true,
-    "image": "Recreation/pickleball-duo-set.jpeg",
+    "image": "recreation/pickleball-duo-set.jpeg",
     "desc": "Two paddles and two outdoor pickleballs.",
     "instructions": "Use on designated pickleball courts. Do not use paddles to hit heavy objects. Return balls to the pouch."
   },
@@ -188,7 +188,7 @@
     "category": "Recreation",
     "tier": 1,
     "availability": true,
-    "image": "Recreation/art-easel.jpeg",
+    "image": "recreation/art-easel.jpeg",
     "desc": "Adjustable wooden tripod easel for canvas painting.",
     "instructions": "Loosen the wing nuts to adjust the leg height. Secure the canvas between the top and bottom tray clamps."
   },
@@ -198,7 +198,7 @@
     "category": "Recreation",
     "tier": 1,
     "availability": true,
-    "image": "Recreation/toronto-puzzle.jpg",
+    "image": "recreation/toronto-puzzle.jpg",
     "desc": "1000-piece jigsaw puzzle featuring the Toronto skyline.",
     "instructions": "Find a flat surface and start with the edges. Please triple-check you haven't dropped any pieces on the floor."
   },
@@ -208,7 +208,7 @@
     "category": "Recreation",
     "tier": 1,
     "availability": true,
-    "image": "Recreation/frisbee.jpeg",
+    "image": "recreation/frisbee.jpeg",
     "desc": "Classic 175g ultimate disc for outdoor play.",
     "instructions": "Hold with a firm grip and flick your wrist to throw. Avoid throwing near windows or traffic."
   },
