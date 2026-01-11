@@ -20,7 +20,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, var(--hero-darkness, 0.3));
+    background: rgba(0, 0, 0, var(--hero-darkness, 0.2));
     z-index: 2;
     transition: background 0.05s linear;
 }
@@ -118,9 +118,9 @@ body {
 
 .category-card {
     width: 90%;
-    height: 100px;
-    border-radius: 24px;
-    margin: 0 auto 20px;
+    height: 88px;
+    border-radius: 20px;
+    margin: 0 auto 16px;
     position: relative;
     z-index: 10;
     overflow: hidden;
@@ -143,6 +143,7 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    filter: brightness(1.05) contrast(1.02);
 }
 
 .category-card .overlay {
@@ -151,7 +152,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.35) 0%, transparent 70%);
     z-index: 2;
 }
 
@@ -159,8 +160,9 @@ body {
     position: relative;
     z-index: 3;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .category-card ion-icon {
@@ -169,6 +171,96 @@ body {
     color: white;
     font-size: 24px;
     z-index: 3;
+}
+
+/* My Bookings Section */
+.bookings-list {
+    padding: 0 var(--padding-page);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 10;
+}
+
+.booking-card {
+    background: white;
+    padding: 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid #F1F5F9;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.booking-card:active {
+    transform: scale(0.98);
+}
+
+.booking-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #F8FAFC;
+}
+
+.booking-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.booking-info {
+    flex-grow: 1;
+}
+
+.booking-info h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1C1E;
+    margin-bottom: 4px;
+    padding-left: 0; /* Override section title padding */
+}
+
+.booking-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #6B7280;
+    font-size: 13px;
+}
+
+.booking-time ion-icon {
+    font-size: 14px;
+}
+
+.booking-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.booking-badge.active {
+    background: #DCFCE7;
+    color: #166534;
+}
+
+.booking-badge.upcoming {
+    background: #EFF6FF;
+    color: #1E40AF;
+}
+
+.detail-arrow {
+    color: #CBD5E1;
+    font-size: 18px;
+    margin-left: 4px;
 }
 
 .policies-list {
@@ -208,13 +300,13 @@ body {
 }
 
 .policy-row span {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     color: #111827;
 }
 
 .policy-row ion-icon {
-    font-size: 24px;
+    font-size: 20px;
     color: #111827;
     transition: transform 0.3s ease;
 }
@@ -233,18 +325,18 @@ body {
 
 .policy-row.active .policy-content {
     max-height: 200px; /* Adjust as needed */
-    padding: 24px 24px 24px;
+    padding: 16px 24px 20px;
 }
 
 .policy-content p {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--text-secondary);
     line-height: 1.6;
     padding: 0 !important;
 }
 
 .section-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--text-color);

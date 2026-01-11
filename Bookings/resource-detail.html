@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Detail - Quaynect</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="bookings.css">
+    <link rel="stylesheet" href="resource-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="app-container detail-page-container">
+        <!-- Hero Section -->
+        <div class="detail-hero">
+            <button class="back-circles-btn" id="back-btn">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div class="detail-image-container">
+                <img id="resource-image" src="" alt="Resource Image">
+            </div>
+        </div>
+
+        <div class="detail-content">
+            <div class="detail-header-row">
+                <h1 id="resource-name">Loading...</h1>
+                <button class="reserve-btn">Reserve</button>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-card">
+                <div class="info-row">
+                    <span class="info-label">Availability</span>
+                    <span class="info-value available" id="availability-text">Available Now</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Tier</span>
+                    <span class="info-value" id="tier-text">Tier 1</span>
+                </div>
+            </div>
+
+            <h3>Description</h3>
+            <div class="description-box">
+                <p id="resource-desc">Loading description...</p>
+            </div>
+
+            <div class="instructions-accordion">
+                <div class="instruction-row">
+                    <div class="instruction-header">
+                        <span>How to use</span>
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+                    <div class="instruction-content">
+                        <p id="resource-instructions">Loading instructions...</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Questions?</h3>
+            <div class="questions-box">
+                <p>Feel free to get in touch if you have any questions - Our team is always happy to help.</p>
+                <div class="contact-links">
+                    <a href="mailto:quayside.resourcebooking@email.com" class="contact-chip email">quayside.resourcebooking@email.com</a>
+                    <div class="contact-row">
+                        <span class="contact-chip">In Person</span>
+                        <span class="contact-chip">000-000-000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-credit">Quaynect © 2025</div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="nav-item">
+                <ion-icon name="home-outline"></ion-icon>
+                <span>Home</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+                <span>Chat</span>
+            </div>
+            <div class="nav-item active">
+                <ion-icon name="calendar"></ion-icon>
+                <span>Bookings</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="person-outline"></ion-icon>
+                <span>Profile</span>
+            </div>
+        </nav>
+    </div>
+
+    <script src="resource-detail.js"></script>
+</body>
+</html>

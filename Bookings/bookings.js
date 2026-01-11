@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollY = scrollWrapper.scrollTop;
         
         // Darken image as we scroll
-        // Map 0 -> heroHeight to 0.3 -> 0.8 darkness
-        const darkness = Math.min(0.8, 0.3 + (scrollY / heroHeight) * 0.5);
+        // Map 0 -> heroHeight to 0.2 -> 0.7 darkness
+        const darkness = Math.min(0.7, 0.2 + (scrollY / heroHeight) * 0.5);
         heroImage.style.setProperty('--hero-darkness', darkness);
     });
 

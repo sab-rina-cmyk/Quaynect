@@ -97,7 +97,7 @@ function displayResources(items) {
         `;
 
         card.addEventListener('click', () => {
-            alert(`Booking ${item.name}...\n(Feature coming soon)`);
+            window.location.href = `resource-detail.html?id=${item.id}`;
         });
 
         grid.appendChild(card);
