@@ -1,0 +1,272 @@
+[
+  {
+    "id": 101,
+    "name": "Hand Drill",
+    "category": "Tools",
+    "tier": 2,
+    "availability": true,
+    "image": "Tools/drill.jpeg",
+    "desc": "18V Cordless power drill for drilling holes and driving screws."
+  },
+  {
+    "id": 102,
+    "name": "Tool Box",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "Tools/tool box.jpeg",
+    "desc": "General purpose kit containing hammer, pliers, screwdrivers, and wrenches."
+  },
+  {
+    "id": 103,
+    "name": "Measuring Tape",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/7c3aed/white?text=Measuring+Tape",
+    "desc": "25ft heavy-duty locking tape measure."
+  },
+  {
+    "id": 104,
+    "name": "Dolly",
+    "category": "Tools",
+    "tier": 1,
+    "availability": false,
+    "image": "Tools/dolly.jpeg",
+    "desc": "Convertible hand truck for moving heavy boxes or furniture."
+  },
+  {
+    "id": 105,
+    "name": "Garment Steamer",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/7c3aed/white?text=Garment+Steamer",
+    "desc": "Portable steamer for removing wrinkles from fabric and upholstery."
+  },
+  {
+    "id": 106,
+    "name": "Ironing Set",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "Tools/iron.jpeg",
+    "desc": "Includes steam iron and foldable ironing board."
+  },
+  {
+    "id": 107,
+    "name": "Spot Cleaner",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/7c3aed/white?text=Spot+Cleaner",
+    "desc": "Portable carpet and upholstery cleaner for stain removal."
+  },
+  {
+    "id": 108,
+    "name": "Level",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "Tools/level.jpeg",
+    "desc": "24-inch I-beam spirit level."
+  },
+  {
+    "id": 109,
+    "name": "Extension Cord",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "Tools/extension-cord.jpeg",
+    "desc": "50ft indoor/outdoor heavy-duty power extension cable."
+  },
+  {
+    "id": 110,
+    "name": "Drill Bit Set",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "Tools/drill-bit-set.jpeg",
+    "desc": "Assorted kit including masonry, wood, and metal bits."
+  },
+  {
+    "id": 111,
+    "name": "Safety Glasses",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "Tools/safety-goggles.jpeg",
+    "desc": "ANSI-rated clear protective eyewear."
+  },
+  {
+    "id": 112,
+    "name": "Sewing Machine",
+    "category": "Tools",
+    "tier": 2,
+    "availability": false,
+    "image": "https://placehold.co/600x400/7c3aed/white?text=Sewing+Machine",
+    "desc": "Heavy-duty machine suitable for canvas, denim, and light leather."
+  },
+  {
+    "id": 113,
+    "name": "Vacuum",
+    "category": "Tools",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/7c3aed/white?text=Vacuum",
+    "desc": "Industrial wet/dry shop vacuum."
+  },
+  {
+    "id": 114,
+    "name": "Badminton Duo Set",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Badminton+Set",
+    "desc": "Includes two rackets and a tube of birdies."
+  },
+  {
+    "id": 115,
+    "name": "Soccer Ball",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Soccer+Ball",
+    "desc": "Standard size 5 soccer ball."
+  },
+  {
+    "id": 116,
+    "name": "Spikeball Set",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": false,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Spikeball",
+    "desc": "Standard roundnet kit with net, frame, and 3 balls."
+  },
+  {
+    "id": 117,
+    "name": "Toronto Monopoly",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Toronto+Monopoly",
+    "desc": "Classic property trading game, Toronto edition."
+  },
+  {
+    "id": 118,
+    "name": "Deck of Cards",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Deck+of+Cards",
+    "desc": "Standard 52-card deck (Bicycle brand)."
+  },
+  {
+    "id": 119,
+    "name": "Pickleball Duo Set",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Pickleball+Set",
+    "desc": "Two paddles and two outdoor pickleballs."
+  },
+  {
+    "id": 120,
+    "name": "Painting Easel",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Painting+Easel",
+    "desc": "Adjustable wooden tripod easel for canvas painting."
+  },
+  {
+    "id": 121,
+    "name": "Toronto Puzzle",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Toronto+Puzzle",
+    "desc": "1000-piece jigsaw puzzle featuring the Toronto skyline."
+  },
+  {
+    "id": 122,
+    "name": "Basketball",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Basketball",
+    "desc": "Indoor/Outdoor composite leather basketball (Size 7)."
+  },
+  {
+    "id": 123,
+    "name": "Tripod",
+    "category": "Recreation",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=Tripod",
+    "desc": "Lightweight aluminum camera tripod with phone mount."
+  },
+  {
+    "id": 124,
+    "name": "DSLR Camera",
+    "category": "Recreation",
+    "tier": 3,
+    "availability": false,
+    "image": "https://placehold.co/600x400/f59e0b/white?text=DSLR+Camera",
+    "desc": "Canon EOS Rebel with 18-55mm lens kit."
+  },
+  {
+    "id": 125,
+    "name": "Billiards Room",
+    "category": "Spaces",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/10b981/white?text=Billiards+Room",
+    "desc": "Common room with pool table and lounge seating."
+  },
+  {
+    "id": 126,
+    "name": "Theatre",
+    "category": "Spaces",
+    "tier": 2,
+    "availability": false,
+    "image": "https://placehold.co/600x400/10b981/white?text=Theatre",
+    "desc": "Bookable screening room with projector and surround sound."
+  },
+  {
+    "id": 127,
+    "name": "Yoga Studio",
+    "category": "Spaces",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/10b981/white?text=Yoga+Studio",
+    "desc": "Open floor studio with mirrors and mats provided."
+  },
+  {
+    "id": 128,
+    "name": "Meeting Room",
+    "category": "Spaces",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/10b981/white?text=Meeting+Room",
+    "desc": "Quiet workspace with whiteboard and conference table."
+  },
+  {
+    "id": 129,
+    "name": "Barbeque",
+    "category": "Spaces",
+    "tier": 2,
+    "availability": true,
+    "image": "https://placehold.co/600x400/10b981/white?text=Barbeque",
+    "desc": "Outdoor gas grill station located on the patio."
+  },
+  {
+    "id": 130,
+    "name": "Rooftop Terrace",
+    "category": "Spaces",
+    "tier": 1,
+    "availability": true,
+    "image": "https://placehold.co/600x400/10b981/white?text=Rooftop+Terrace",
+    "desc": "Open air rooftop space with dining tables and view."
+  }
+]

@@ -1,0 +1,296 @@
+/* Bookings Page Core Layout */
+body {
+    overflow: hidden; /* Prevent body scroll in favor of custom wrapper */
+}
+
+.hero-image {
+    width: 100%;
+    height: 40vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, var(--hero-darkness, 0.3));
+    z-index: 2;
+    transition: background 0.05s linear;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bookings-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+}
+
+/* The fixed viewport for scrolling */
+.scroll-wrapper {
+    position: fixed;
+    top: 72px; /* Fixed anchor at the bottom of the header */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10;
+    -webkit-overflow-scrolling: touch;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+}
+
+.scroll-spacer {
+    height: calc(40vh - 72px - 32px); /* Overlap by 32px to create the rounded "cut" effect */
+    background: transparent;
+    pointer-events: none;
+}
+
+.bookings-container {
+    padding-bottom: 120px;
+    position: relative;
+    z-index: 11;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    overflow: hidden; /* Clips children to the container's rounded boundaries */
+}
+
+/* This creates the white container that "locks" at the top */
+.sticky-bg-frame {
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Frame is behind the main scrolling text/cards */
+    height: 0; /* Important: prevents the sticky frame from pushing content down */
+}
+
+.sticky-bg-frame::before {
+    content: '';
+    display: block;
+    height: 500vh; /* Extremely tall to ensure it covers all scrolling content */
+    background: var(--white);
+    border-radius: 32px 32px 0 0;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+}
+
+.container-handle {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: #E5E7EB;
+    border-radius: 2px;
+    z-index: 2; /* Sits on top of the sticky background */
+}
+
+.bookings-container h3, 
+.bookings-container p,
+.bookings-container br {
+    position: relative;
+    z-index: 10; /* Ensure content is above the sticky background */
+    padding-left: var(--padding-page);
+    padding-right: var(--padding-page);
+}
+
+.bookings-container h3.section-title {
+    padding-top: 32px; /* Margin from the handle */
+}
+
+.category-card {
+    width: 90%;
+    height: 100px;
+    border-radius: 24px;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.category-card:active {
+    transform: scale(0.97);
+}
+
+.category-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.category-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
+    z-index: 2;
+}
+
+.category-card h4 {
+    position: relative;
+    z-index: 3;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.category-card ion-icon {
+    position: absolute;
+    right: 24px;
+    color: white;
+    font-size: 24px;
+    z-index: 3;
+}
+
+.policies-list {
+    background: white;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    border: 1px solid #F3F4F6;
+}
+
+.policy-row {
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid #F3F4F6;
+    display: flex;
+    flex-direction: column;
+}
+
+.policy-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    width: 100%;
+}
+
+.policy-row:last-child {
+    border-bottom: none;
+}
+
+.policy-row:active {
+    background: #F9FAFB;
+}
+
+.policy-row span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.policy-row ion-icon {
+    font-size: 24px;
+    color: #111827;
+    transition: transform 0.3s ease;
+}
+
+.policy-row.active ion-icon {
+    transform: rotate(90deg);
+}
+
+.policy-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background: #F9FAFB;
+    padding: 0 24px;
+}
+
+.policy-row.active .policy-content {
+    max-height: 200px; /* Adjust as needed */
+    padding: 24px 24px 24px;
+}
+
+.policy-content p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding: 0 !important;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.bookings-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
+}
+
+.bookings-header .back-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.bookings-header .back-btn:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.bookings-header .header-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    flex-grow: 1;
+    margin-left: 16px;
+    letter-spacing: -0.5px;
+}
