@@ -3,27 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Front Desk - Quayside</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Packages - Quaynect</title>
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }</style>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-<body class="p-6">
-    <div class="flex items-center space-x-4 mb-8">
-        <a href="../index.html" class="p-2 bg-white rounded-full shadow-sm">
-            <i data-lucide="chevron-left" class="w-6 h-6 text-gray-700"></i>
-        </a>
-        <h1 class="text-2xl font-bold text-gray-800">Front Desk</h1>
-    </div>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <button class="icon-btn back-btn" onclick="history.back()">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <h1>Packages</h1>
+            </div>
+        </header>
 
-    <div class="bg-white rounded-3xl p-8 shadow-sm flex flex-col items-center justify-center space-y-4">
-        <div class="p-4 bg-blue-50 rounded-full text-blue-500">
-            <i data-lucide="library" class="w-12 h-12"></i>
-        </div>
-        <p class="text-gray-500 text-center">Contact concierge or manage your requests here.</p>
-    </div>
+        <!-- Package Count with Carousel -->
+        <section class="section-container">
+            <div class="package-status-card">
+                <div class="pkg-header">
+                    <div>
+                        <h2 style="font-size: 20px; font-weight: 700; color: #1e293b; margin: 0;">Arrivals</h2>
+                        <p style="font-size: 13px; color: #64748b; margin: 0;">Ready at concierge</p>
+                    </div>
+                    <span class="pkg-count-badge">3 ITEMS</span>
+                </div>
 
-    <script>lucide.createIcons();</script>
+                <div class="package-carousel">
+                    <!-- Item 1 -->
+                    <div class="carousel-item">
+                        <div class="pkg-info-main">
+                            <div class="pkg-icon" style="color: #ff9900;">
+                                <ion-icon name="logo-amazon"></ion-icon>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 15px; margin: 0; color: #1e293b;">Amazon Logistics</h4>
+                                <p style="font-size: 12px; margin: 0; color: #64748b;">Tracking #1293</p>
+                            </div>
+                        </div>
+                        <div class="pkg-meta-grid">
+                            <div class="meta-item">
+                                <span class="meta-label">Dimensions</span>
+                                <span class="meta-value">12x8x4"</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Weight</span>
+                                <span class="meta-value">2.4 lbs</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Box Colour</span>
+                                <span class="meta-value">Brown</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="carousel-item">
+                        <div class="pkg-info-main">
+                            <div class="pkg-icon" style="color: #48bb78; background: #f0fff4;">
+                                <ion-icon name="leaf-outline"></ion-icon>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 15px; margin: 0; color: #1e293b;">HelloFresh</h4>
+                                <p style="font-size: 12px; margin: 0; color: #64748b;">Tracking #8821</p>
+                            </div>
+                        </div>
+                        <div class="pkg-meta-grid">
+                            <div class="meta-item">
+                                <span class="meta-label">Dimensions</span>
+                                <span class="meta-value">18x12x10"</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Weight</span>
+                                <span class="meta-value">14.0 lbs</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Box Colour</span>
+                                <span class="meta-value">Green</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="carousel-item">
+                        <div class="pkg-info-main">
+                            <div class="pkg-icon" style="color: #4b2e2b; background: #fff7ed;">
+                                <ion-icon name="archive-outline"></ion-icon>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 15px; margin: 0; color: #1e293b;">UPS Express</h4>
+                                <p style="font-size: 12px; margin: 0; color: #64748b;">Tracking #4410</p>
+                            </div>
+                        </div>
+                        <div class="pkg-meta-grid">
+                            <div class="meta-item">
+                                <span class="meta-label">Dimensions</span>
+                                <span class="meta-value">10x13x1"</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Weight</span>
+                                <span class="meta-value">0.8 lbs</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Box Colour</span>
+                                <span class="meta-value">White</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- List -->
+        <section class="section-container">
+            <h3>Recent Items</h3>
+            <div class="points-history-container">
+                <!-- Amazon -->
+                <div class="history-row">
+                    <div class="card-icon icon-blue">
+                        <ion-icon name="logo-amazon"></ion-icon>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-title">Amazon Logistics</span>
+                        <span class="card-subtext">Tracking #1293 • Arrived today</span>
+                    </div>
+                    <div class="card-action">
+                        <span class="points-card-msg">NEW</span>
+                    </div>
+                </div>
+
+                <!-- UPS -->
+                <div class="history-row">
+                    <div class="card-icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-title">UPS Express</span>
+                        <span class="card-subtext">Tracking #4410 • Arrived Dec 24</span>
+                    </div>
+                    <div class="card-action">
+                        <i class="fas fa-chevron-right action-chevron"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="nav-item">
+                <ion-icon name="home-outline"></ion-icon>
+                <span>Home</span>
+            </div>
+            <div class="nav-item active">
+                <ion-icon name="construct"></ion-icon>
+                <span>Services</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                <span>Messages</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <span>Profile</span>
+            </div>
+        </nav>
+    </div>
+    <script>
+        const carousel = document.querySelector('.package-carousel');
+        const dots = document.querySelectorAll('.dot');
+
+        if (carousel && dots.length > 0) {
+            carousel.addEventListener('scroll', () => {
+                const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            });
+        }
+    </script>
+    <script src="../script.js"></script>
 </body>
 </html>
