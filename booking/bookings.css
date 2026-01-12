@@ -300,6 +300,42 @@ html, body {
     z-index: 10;
 }
 
+.bookings-empty-state {
+    padding: 0 var(--padding-page) 40px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.bookings-empty-state.hidden {
+    display: none;
+}
+
+.empty-icon-container {
+    width: 64px;
+    height: 64px;
+    background: #F1F5F9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.empty-icon-container ion-icon {
+    font-size: 32px;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.bookings-empty-state p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 !important; /* Override section padding */
+}
+
 .booking-card {
     background: white;
     padding: 12px;
@@ -354,6 +390,20 @@ html, body {
 
 .booking-time ion-icon {
     font-size: 14px;
+}
+
+.due-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #059669;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.due-time ion-icon {
+    font-size: 13px;
 }
 
 .booking-badge {

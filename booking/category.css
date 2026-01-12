@@ -172,6 +172,33 @@
     color: white;
 }
 
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6B7280;
+}
+
+.empty-state ion-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+/* Utility Classes */
+.spacer-40 {
+    width: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.flex-hidden {
+    display: none;
+}
+
+
 .resource-info {
     padding: 12px;
     display: flex;

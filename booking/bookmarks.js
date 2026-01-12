@@ -25,10 +25,10 @@ function displayBookmarks(allData) {
     const bookmarkedItems = allData.filter(item => bookmarks.includes(item.id));
 
     if (bookmarkedItems.length === 0) {
-        emptyState.style.display = 'block';
+        emptyState.classList.remove('hidden');
         return;
     } else {
-        emptyState.style.display = 'none';
+        emptyState.classList.add('hidden');
     }
 
     bookmarkedItems.forEach(item => {

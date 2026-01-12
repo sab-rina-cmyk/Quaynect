@@ -55,8 +55,25 @@ function renderDetails(item) {
     
     const imgEl = document.getElementById('resource-image');
     imgEl.src = item.image;
+    
+    // Set container background color based on category/item
+    const heroEl = document.querySelector('.detail-hero');
+    if (heroEl) {
+        if (item.category.toLowerCase() === 'recreation' || (item.image && item.image.includes('recreation'))) {
+            heroEl.style.backgroundColor = '#4A8DDC'; // Matches the blue background of recreation items
+        } else if (item.category.toLowerCase() === 'tools') {
+            heroEl.style.backgroundColor = '#F1F5F9'; // Light tool grey
+        } else if (item.category.toLowerCase() === 'spaces') {
+            heroEl.style.backgroundColor = '#E2E8F0'; // Gallery space white/grey
+        } else {
+            heroEl.style.backgroundColor = '#FFFFFF';
+        }
+    }
+
     imgEl.onerror = () => {
-        imgEl.src = `https://placehold.co/600x400?text=${item.name}`;
+        const placeholder = `https://placehold.co/600x400?text=${item.name}`;
+        imgEl.src = placeholder;
+        if (heroEl) heroEl.style.backgroundImage = `url(${placeholder})`;
     };
 
     const availText = document.getElementById('availability-text');

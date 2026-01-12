@@ -84,22 +84,6 @@
         </nav>
     </div>
 
-    <script>
-        document.getElementById('back-btn').addEventListener('click', () => {
-            window.history.back();
-        });
-
-        const checkbox = document.getElementById('terms-checkbox');
-        const completeBtn = document.getElementById('complete-booking');
-
-        checkbox.addEventListener('change', () => {
-            completeBtn.disabled = !checkbox.checked;
-        });
-
-        completeBtn.addEventListener('click', () => {
-            const params = new URLSearchParams(window.location.search);
-            window.location.href = `booking-success.html?${params.toString()}`;
-        });
-    </script>
+    <script src="terms-and-conditions.js"></script>
 </body>
 </html>

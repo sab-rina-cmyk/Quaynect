@@ -16,13 +16,56 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    // Dynamic Chip Generation
+    function renderFilterChips(category) {
+        const chipContainer = document.querySelector('.filter-chips');
+        if (!chipContainer) return;
+
+        let chips = ['All'];
+        
+        if (category.toLowerCase() === 'recreation') {
+            chips = ['All', 'Outdoor', 'Indoor', 'Multiplayer', 'Creative', 'Exercise'];
+        } else if (category.toLowerCase() === 'tools') {
+            chips = ['All', 'Cleaning', 'Electrical', 'Hand tools', 'Household'];
+        } else if (category.toLowerCase() === 'spaces') {
+            chips = ['All', 'Quiet', 'Meeting', 'Social', 'Workshop'];
+        }
+
+        chipContainer.innerHTML = chips.map((chip, index) => 
+            `<div class="chip ${index === 0 ? 'active' : ''}">${chip}</div>`
+        ).join('');
+
+        // Re-attach event listeners to new chips
+        const chipElements = chipContainer.querySelectorAll('.chip');
+        chipElements.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chipElements.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                
+                const filter = chip.innerText;
+                if (filter === 'All') {
+                    displayResources(window.currentCategoryData);
+                } else {
+                    const filteredByChip = window.currentCategoryData.filter(item => 
+                        item.name.toLowerCase().includes(filter.toLowerCase()) || 
+                        item.desc.toLowerCase().includes(filter.toLowerCase()) ||
+                        (item.subCategory && item.subCategory.toLowerCase() === filter.toLowerCase())
+                    );
+                    displayResources(filteredByChip);
+                }
+            });
+        });
+    }
+
     // Fetch and Display Data
     try {
         const response = await fetch('data.json');
         const allData = await response.json();
         
         const filteredData = allData.filter(item => item.category.toLowerCase() === categoryType.toLowerCase());
+        window.currentCategoryData = filteredData; // Store globally for filtering
         
+        renderFilterChips(categoryType);
         displayResources(filteredData);
 
         // Search functionality
@@ -35,27 +78,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             );
             displayResources(searchedData);
         });
-
-        // Chip filtering
-        const chips = document.querySelectorAll('.chip');
-        chips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                chips.forEach(c => c.classList.remove('active'));
-                chip.classList.add('active');
-                
-                const filter = chip.innerText;
-                if (filter === 'All') {
-                    displayResources(filteredData);
-                } else {
-                    const filteredByChip = filteredData.filter(item => 
-                        item.name.toLowerCase().includes(filter.toLowerCase()) ||
-                        item.desc.toLowerCase().includes(filter.toLowerCase())
-                    );
-                    displayResources(filteredByChip);
-                }
-            });
-        });
-
     } catch (error) {
         console.error('Error loading resources:', error);
     }
