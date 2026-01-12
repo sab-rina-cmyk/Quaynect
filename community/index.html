@@ -1,29 +1,1021 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community - Quayside</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }</style>
-</head>
-<body class="p-6">
-    <div class="flex items-center space-x-4 mb-8">
-        <a href="../index.html" class="p-2 bg-white rounded-full shadow-sm">
-            <i data-lucide="chevron-left" class="w-6 h-6 text-gray-700"></i>
-        </a>
-        <h1 class="text-2xl font-bold text-gray-800">Community</h1>
-    </div>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6", // Blue-500 from screenshot
+                        "primary-dark": "#2563EB", // Blue-600
+                        "background-light": "#F3F4F6", // Gray-100
+                        "background-dark": "#111827", // Gray-900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937", // Gray-800
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem", // rounded-2xl
+                    },
+                },
+            },
+        };
+    </script>
+<link rel="stylesheet" href="styles.css">
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-body text-gray-900 dark:text-gray-100 antialiased min-h-screen pb-24">
+<div class="px-6 py-3 flex justify-between items-center text-sm font-semibold dark:text-white">
+<span>9:41</span>
+<div class="flex items-center gap-1">
+<span class="material-icons-round text-base">signal_cellular_alt</span>
+<span class="material-icons-round text-base">wifi</span>
+<span class="material-icons-round text-base">battery_full</span>
+</div>
+</div>
+<header class="px-4 pt-2 pb-4 sticky top-0 z-20 bg-background-light dark:bg-background-dark/95 backdrop-blur-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<button class="p-2 -ml-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+<span class="material-icons-round text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="text-3xl font-bold tracking-tight">Community</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+<span class="material-icons-round text-2xl text-gray-600 dark:text-gray-300">help_outline</span>
+</button>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 material-icons-round">search</span>
+<input class="w-full bg-white dark:bg-card-dark border-none rounded-xl py-3 pl-10 pr-10 shadow-sm focus:ring-2 focus:ring-primary dark:text-white placeholder-gray-400" placeholder="Search" type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 material-icons-round">mic</span>
+</div>
+</header>
+<main class="space-y-8">
+<section class="pl-4 pt-8">
+<h2 class="text-xl font-bold mb-6 px-1">What's New?</h2>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-6 px-4 pt-4 snap-x snap-mandatory">
+<div class="min-w-[280px] snap-center bg-card-light dark:bg-card-dark rounded-2xl shadow-sm p-3 flex-shrink-0 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-primary transition-all duration-300">
+<div class="h-32 w-full rounded-xl overflow-hidden mb-3 relative">
+<img alt="Group of runners in park" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ75kRTieIVPUzQ_6I-9NSg_tB_ec9hJ0SvprwDG_1U5KImj_q942xeghVk9aUMjFEyiw-gmjHdoSrNsrThlVi2yIfxxHsxQ2syPYTEb2sInmxFYNRzmlbhk6oFYefK2yHjmQzfOU8on7T1K7BjbustvS2QzIc4X86YHgF60z4gAjqvhOY2y2s4TLYE4e-rfmcRVmM38rOkdhGj52k5EMCM1Xlpa8f9Pz6gKIYZdaBHXwunOga_2sNfW-9cNgyVt-syvRdIaCGtw"/>
+</div>
+<p class="text-primary font-medium text-sm text-center px-1">Quay Runners place top 3 in the 10K</p>
+</div>
+<div class="min-w-[280px] snap-center bg-card-light dark:bg-card-dark rounded-2xl shadow-sm p-3 flex-shrink-0 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-primary transition-all duration-300">
+<div class="h-32 w-full rounded-xl overflow-hidden mb-3 relative">
+<img alt="Book club meeting" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR4-L4DGZTAdDS4mqyD9-zGYNiSxIVhzPk1Rv04RXll24HSfuuknNvewIllDksf878YCZdxzW_mpnoxXNy7-N94nNy2w7fcVGQDZbqakTtQYoNZ5BxoWcISH4tfthdOvi4Jx3JTE6G-P6V6k_ITKjfVPCSX5LpvDXNLF8GNydtrREO9Je0H2rqp-YeTK5LRshT5kslkGUckK8x3VBHBbAufeanc-paYNdCCd_SsuDBiA1NKsauhrp62ZSLMudSowXryCHPl01JBw"/>
+</div>
+<p class="text-primary font-medium text-sm text-center px-1">Book club meets this Sunday</p>
+</div>
+<div class="min-w-[280px] snap-center bg-card-light dark:bg-card-dark rounded-2xl shadow-sm p-3 flex-shrink-0 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-primary transition-all duration-300">
+<div class="h-32 w-full rounded-xl overflow-hidden mb-3 relative">
+<img alt="Community yoga class" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop"/>
+</div>
+<p class="text-primary font-medium text-sm text-center px-1">Free yoga classes starting next week</p>
+</div>
+<div class="min-w-[280px] snap-center bg-card-light dark:bg-card-dark rounded-2xl shadow-sm p-3 flex-shrink-0 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-primary transition-all duration-300">
+<div class="h-32 w-full rounded-xl overflow-hidden mb-3 relative">
+<img alt="Community garden" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop"/>
+</div>
+<p class="text-primary font-medium text-sm text-center px-1">Community garden harvest festival</p>
+</div>
+<div class="min-w-[280px] snap-center bg-card-light dark:bg-card-dark rounded-2xl shadow-sm p-3 flex-shrink-0 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-primary transition-all duration-300">
+<div class="h-32 w-full rounded-xl overflow-hidden mb-3 relative">
+<img alt="Kids playing soccer" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=300&fit=crop"/>
+</div>
+<p class="text-primary font-medium text-sm text-center px-1">Youth soccer league registration open</p>
+</div>
+<div class="min-w-[280px] snap-center bg-card-light dark:bg-card-dark rounded-2xl shadow-sm p-3 flex-shrink-0 cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-primary transition-all duration-300">
+<div class="h-32 w-full rounded-xl overflow-hidden mb-3 relative">
+<img alt="Art workshop" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=300&fit=crop"/>
+</div>
+<p class="text-primary font-medium text-sm text-center px-1">Weekend art workshop for beginners</p>
+</div>
+</div>
+</section>
+<!-- Explore Queyside Section -->
+<section id="explore-section" class="pt-4">
+<div class="px-5 flex items-center gap-2 mb-6">
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-primary">
+<span class="material-icons-round">explore</span>
+</div>
+<h2 class="text-2xl font-bold">Explore Queyside</h2>
+</div>
+<div class="px-5 grid grid-cols-2 gap-4">
+<!-- Groups Card -->
+<button id="groups-card" class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl p-6 h-48 flex flex-col items-start justify-between text-left shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+<div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-md">
+<span class="material-icons-round text-3xl text-primary">groups</span>
+</div>
+<span class="text-xl font-bold text-gray-900 mt-auto">Groups</span>
+</button>
+<!-- Events Card -->
+<button id="events-card" class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl p-6 h-48 flex flex-col items-start justify-between text-left shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+<div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-md">
+<span class="material-icons-round text-3xl text-primary">celebration</span>
+</div>
+<span class="text-xl font-bold text-gray-900 mt-auto">Events</span>
+</button>
+<!-- Volunteer Card -->
+<button class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl p-6 h-48 flex flex-col items-start justify-between text-left shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+<div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-md">
+<span class="material-icons-round text-3xl text-primary">volunteer_activism</span>
+</div>
+<span class="text-xl font-bold text-gray-900 mt-auto">Volunteer</span>
+</button>
+<!-- Spaces Card -->
+<button class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl p-6 h-48 flex flex-col items-start justify-between text-left shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+<div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-md">
+<span class="material-icons-round text-3xl text-primary">business</span>
+</div>
+<span class="text-xl font-bold text-gray-900 mt-auto">Spaces</span>
+</button>
+</div>
+</section>
+<!-- Discover Groups Section -->
+<section id="discover-groups-section" class="pt-4 hidden">
+<div class="px-5 flex items-center gap-2 mb-4">
+<button id="back-to-explore" class="p-2 -ml-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300">
+<span class="material-icons-round text-2xl">arrow_back</span>
+</button>
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-primary">
+<span class="material-icons-round">groups</span>
+</div>
+<h2 class="text-2xl font-bold">Discover Groups</h2>
+</div>
+<div class="flex gap-3 overflow-x-auto hide-scrollbar px-5 mb-2 pt-4 pb-2">
+<button data-filter="nature" class="filter-btn bg-primary text-white px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-md transition-all duration-300 border border-transparent">
+                    Nature
+                </button>
+<button data-filter="fitness" class="filter-btn bg-white dark:bg-card-dark text-gray-700 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300">
+                    Fitness
+                </button>
+<button data-filter="mindfulness" class="filter-btn bg-white dark:bg-card-dark text-gray-700 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300">
+                    Mindfulness
+                </button>
+<button data-filter="learn" class="filter-btn bg-white dark:bg-card-dark text-gray-700 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300">
+                    Learn
+                </button>
+</div>
+<div class="bg-primary mx-2 rounded-3xl p-6 pb-8 relative">
+<!-- Pagination Dots -->
+<div id="pagination-dots" class="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-10">
+<div class="pagination-dot w-2 h-2 rounded-full bg-white opacity-100 transition-all duration-300"></div>
+<div class="pagination-dot w-2 h-2 rounded-full bg-white opacity-30 transition-all duration-300"></div>
+</div>
 
-    <div class="bg-white rounded-3xl p-8 shadow-sm flex flex-col items-center justify-center space-y-4">
-        <div class="p-4 bg-blue-50 rounded-full text-blue-500">
-            <i data-lucide="users" class="w-12 h-12"></i>
-        </div>
-        <p class="text-gray-500 text-center">Connect with your neighbors and join the discussion.</p>
-    </div>
+<div id="groups-scroll-container" class="h-[400px] overflow-y-auto hide-scrollbar scroll-smooth snap-y snap-mandatory pl-6">
+<div id="groups-container" class="grid grid-cols-2 gap-3">
+<!-- Nature Cards -->
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 snap-start" data-category="nature" data-page="1">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="People gardening" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">GreenThumb Club</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300" data-category="nature" data-page="1">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="City park view" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Biidaasige Park Nature Walk</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300" data-category="nature" data-page="1">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Plant care" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Native Plant Care</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300" data-category="nature" data-page="1">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Birds in nature" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Urban Bird &amp; Insect Spotting</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
 
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+<!-- Fitness Cards -->
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden snap-start" data-category="fitness" data-page="1">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Running group" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Morning Runners Club</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="fitness" data-page="1">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Yoga class" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Yoga for Everyone</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="fitness" data-page="1">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Cycling group" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Weekend Cyclists</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="fitness" data-page="1">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Gym workout" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Strength Training Buddies</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+
+<!-- Mindfulness Cards -->
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="mindfulness">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Meditation session" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Guided Meditation Circle</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="mindfulness">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Breathing exercises" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Breathwork & Wellness</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="mindfulness">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Journal writing" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Journaling Together</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="mindfulness">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Tai chi practice" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Tai Chi in the Park</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+
+<!-- Learn Cards -->
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="learn">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Language learning" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Spanish Conversation Club</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="learn">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Coding workshop" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Beginner Coding Workshop</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="learn">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Photography class" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Photography Basics</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="learn">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Cooking class" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Culinary Adventures</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Page 2 Cards for each category (4 more cards) -->
+<!-- Nature Page 2 -->
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 snap-start" data-category="nature" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Wildflower walk" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Wildflower Walks</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300" data-category="nature" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Trail hiking" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Weekend Trail Explorers</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300" data-category="nature" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Tree planting" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Tree Planting Squad</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300" data-category="nature" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Butterfly garden" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1534285887477-b90a089183f0?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Butterfly Watchers</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+
+<!-- Fitness Page 2 -->
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden snap-start" data-category="fitness" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Swimming" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Community Swim Club</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="fitness" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Dance fitness" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Zumba & Dance Fitness</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="fitness" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Rock climbing" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1522163182402-834f871fd851?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Indoor Climbing Partners</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="fitness" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Pilates" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Pilates Together</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+
+<!-- Mindfulness Page 2 -->
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden snap-start" data-category="mindfulness" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Sound bath" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1598134493465-29f2d7e5e2c7?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Sound Bath Healing</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="mindfulness" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Gratitude circle" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Gratitude Circle</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="mindfulness" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Nature meditation" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Forest Bathing</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="mindfulness" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Mindful walking" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1591228127791-8e2eaef098d3?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Mindful Walking Group</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+
+<!-- Learn Page 2 -->
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden snap-start" data-category="learn" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Book club" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Fiction Book Club</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="learn" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Music lessons" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Guitar for Beginners</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="learn" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="Painting class" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Watercolor Painting</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="group-card bg-card-light dark:bg-card-dark rounded-2xl p-2.5 shadow-sm transition-all duration-300 hidden" data-category="learn" data-page="2">
+<div class="h-28 w-full rounded-xl overflow-hidden mb-2">
+<img alt="History discussion" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=400&h=300&fit=crop"/>
+</div>
+<h3 class="text-primary font-medium text-sm mb-2 leading-tight">Local History Society</h3>
+<div class="flex justify-end">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-600 text-primary">
+<span class="material-icons-round text-lg">bookmark_border</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Discover Events Section -->
+<section id="discover-events-section" class="pt-4 hidden transition-opacity duration-700 ease-in-out opacity-0">
+<div id="events-header" class="px-5 flex items-center gap-2 mb-4 transition-all duration-500 ease-in-out transform translate-x-full opacity-0">
+<button id="back-to-explore-from-events" class="p-2 -ml-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300">
+<span class="material-icons-round text-2xl">arrow_back</span>
+</button>
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-primary">
+<span class="material-icons-round">celebration</span>
+</div>
+<h2 class="text-2xl font-bold">Discover Events</h2>
+</div>
+<div class="flex gap-3 overflow-x-auto hide-scrollbar px-5 mb-2 pt-4 pb-2">
+<button data-filter="upcoming" class="event-filter-btn bg-primary text-white px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-md transition-all duration-300 border border-transparent">
+Upcoming
+</button>
+<button data-filter="today" class="event-filter-btn bg-white dark:bg-card-dark text-gray-700 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300">
+Today
+</button>
+<button data-filter="this-week" class="event-filter-btn bg-white dark:bg-card-dark text-gray-700 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300">
+This Week
+</button>
+<button data-filter="this-month" class="event-filter-btn bg-white dark:bg-card-dark text-gray-700 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300">
+This Month
+</button>
+</div>
+<div id="events-blue-box-container" class="bg-primary mx-2 rounded-3xl p-6 pb-8 relative transition-all duration-700 ease-in-out opacity-0">
+<div id="events-scroll-container" class="h-[400px] overflow-y-auto hide-scrollbar scroll-smooth">
+<div id="events-container" class="space-y-3">
+<!-- Upcoming Events -->
+<div class="event-card bg-card-light dark:bg-card-dark rounded-2xl p-4 shadow-sm transition-all duration-300" data-event-category="upcoming">
+<div class="flex gap-3">
+<div class="flex-shrink-0 w-16 h-16 rounded-xl bg-primary/10 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold text-primary">15</span>
+<span class="text-xs text-primary">JAN</span>
+</div>
+<div class="flex-1">
+<h3 class="text-primary font-medium text-sm mb-1 leading-tight">Community Yoga Session</h3>
+<p class="text-xs text-gray-600 dark:text-gray-400 mb-2">10:00 AM - Biidaasige Park</p>
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-xs text-gray-500">group</span>
+<span class="text-xs text-gray-500">24 attending</span>
+</div>
+</div>
+</div>
+</div>
+<div class="event-card bg-card-light dark:bg-card-dark rounded-2xl p-4 shadow-sm transition-all duration-300" data-event-category="upcoming">
+<div class="flex gap-3">
+<div class="flex-shrink-0 w-16 h-16 rounded-xl bg-primary/10 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold text-primary">18</span>
+<span class="text-xs text-primary">JAN</span>
+</div>
+<div class="flex-1">
+<h3 class="text-primary font-medium text-sm mb-1 leading-tight">Book Club Meeting</h3>
+<p class="text-xs text-gray-600 dark:text-gray-400 mb-2">2:00 PM - Community Center</p>
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-xs text-gray-500">group</span>
+<span class="text-xs text-gray-500">15 attending</span>
+</div>
+</div>
+</div>
+</div>
+<div class="event-card bg-card-light dark:bg-card-dark rounded-2xl p-4 shadow-sm transition-all duration-300" data-event-category="upcoming">
+<div class="flex gap-3">
+<div class="flex-shrink-0 w-16 h-16 rounded-xl bg-primary/10 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold text-primary">20</span>
+<span class="text-xs text-primary">JAN</span>
+</div>
+<div class="flex-1">
+<h3 class="text-primary font-medium text-sm mb-1 leading-tight">Weekend Runners Meetup</h3>
+<p class="text-xs text-gray-600 dark:text-gray-400 mb-2">7:00 AM - Trail Start</p>
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-xs text-gray-500">group</span>
+<span class="text-xs text-gray-500">32 attending</span>
+</div>
+</div>
+</div>
+</div>
+<div class="event-card bg-card-light dark:bg-card-dark rounded-2xl p-4 shadow-sm transition-all duration-300" data-event-category="upcoming">
+<div class="flex gap-3">
+<div class="flex-shrink-0 w-16 h-16 rounded-xl bg-primary/10 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold text-primary">22</span>
+<span class="text-xs text-primary">JAN</span>
+</div>
+<div class="flex-1">
+<h3 class="text-primary font-medium text-sm mb-1 leading-tight">Gardening Workshop</h3>
+<p class="text-xs text-gray-600 dark:text-gray-400 mb-2">3:00 PM - Community Garden</p>
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-xs text-gray-500">group</span>
+<span class="text-xs text-gray-500">18 attending</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-5">
+<h2 class="text-2xl font-bold mb-4">Your Groups</h2>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm">
+<div class="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-700">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-icons-round text-gray-400">school</span>
+</div>
+<span class="font-medium text-gray-800 dark:text-gray-100">Study Group</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-gray-500">12 Members</span>
+<span class="material-icons-round text-primary text-xl">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-700">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-icons-round text-gray-400">directions_run</span>
+</div>
+<span class="font-medium text-gray-800 dark:text-gray-100">Weekend Run Club</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-gray-500">32 Members</span>
+<span class="material-icons-round text-primary text-xl">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-icons-round text-gray-400">gesture</span>
+</div>
+<span class="font-medium text-gray-800 dark:text-gray-100">Learn how to Knit!</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-gray-500">9 Members</span>
+<span class="material-icons-round text-primary text-xl">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-5">
+<h2 class="text-2xl font-bold mb-4">Community Board</h2>
+<div class="space-y-3">
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
+<p class="text-gray-800 dark:text-gray-200 mb-3 text-sm leading-relaxed">Book club meeting this Thursday to discuss "The Midnight Library". See you all there!</p>
+<div class="flex items-center gap-2 text-xs">
+<a class="text-primary font-medium" href="#">Posted 3 Hrs Ago</a>
+<span class="text-gray-400">•</span>
+<span class="text-gray-500 dark:text-gray-400">12 Replies</span>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
+<p class="text-gray-800 dark:text-gray-200 mb-3 text-sm leading-relaxed">Is anyone free over the weekend to help me build an IKEA shelf?</p>
+<div class="flex items-center gap-2 text-xs">
+<a class="text-primary font-medium" href="#">Posted 8 Hrs Ago</a>
+<span class="text-gray-400">•</span>
+<span class="text-gray-500 dark:text-gray-400">3 Replies</span>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
+<p class="text-gray-800 dark:text-gray-200 mb-3 text-sm leading-relaxed">Thinking we need a gardening club. Would anybody be interested in joining?</p>
+<div class="flex items-center gap-2 text-xs">
+<a class="text-primary font-medium" href="#">Posted 9 Hrs Ago</a>
+<span class="text-gray-400">•</span>
+<span class="text-gray-500 dark:text-gray-400">28 Replies</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-5">
+<h2 class="text-2xl font-bold mb-4">Community Guidelines</h2>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm">
+<button class="w-full flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-700 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+<span class="text-lg text-gray-800 dark:text-gray-100">Be Respectful</span>
+<span class="material-icons-round text-gray-400 text-xl">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-700 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+<span class="text-lg text-gray-800 dark:text-gray-100">Group Conduct</span>
+<span class="material-icons-round text-gray-400 text-xl">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-700 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+<span class="text-lg text-gray-800 dark:text-gray-100">Event Hosting</span>
+<span class="material-icons-round text-gray-400 text-xl">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-700 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+<span class="text-lg text-gray-800 dark:text-gray-100">Starting a New Group</span>
+<span class="material-icons-round text-gray-400 text-xl">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+<span class="text-lg text-gray-800 dark:text-gray-100">Reporting Issues</span>
+<span class="material-icons-round text-gray-400 text-xl">chevron_right</span>
+</button>
+</div>
+</section>
+<section class="px-5 mb-8">
+<h2 class="text-2xl font-bold mb-4">Questions?</h2>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-6 shadow-sm">
+<p class="text-gray-700 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+                    Feel free to get in touch if you have any questions - Our team is always happy to help.
+                </p>
+<div class="flex flex-wrap gap-2">
+<a class="inline-block bg-primary hover:bg-primary-dark text-white text-xs font-medium px-4 py-2 rounded-full transition" href="mailto:quayside.resourcebooking@email.com">
+                        quayside.resourcebooking@email.com
+                    </a>
+<a class="inline-block bg-primary hover:bg-primary-dark text-white text-xs font-medium px-4 py-2 rounded-full transition" href="#">
+                        In Person
+                    </a>
+<a class="inline-block bg-primary hover:bg-primary-dark text-white text-xs font-medium px-4 py-2 rounded-full transition" href="tel:000-000-000">
+                        000-000-000
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-6 pb-4">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<button class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+<span class="material-icons-round text-3xl">home</span>
+</button>
+<button class="flex flex-col items-center justify-center w-12 h-12 text-primary">
+<span class="material-symbols-rounded text-3xl filled font-variation-settings-'FILL'-1">chat_bubble</span>
+</button>
+<button class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+<span class="material-icons-round text-3xl">construction</span>
+</button>
+<button class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+<span class="material-icons-round text-3xl">account_circle</span>
+</button>
+</div>
+</nav>
+
+<script src="script.js"></script>
+    // Filter button interactions and pagination
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const groupCards = document.querySelectorAll('.group-card');
+        const scrollContainer = document.getElementById('groups-scroll-container');
+        const paginationDots = document.querySelectorAll('.pagination-dot');
+        
+        // Section navigation
+        const exploreSection = document.getElementById('explore-section');
+        const discoverGroupsSection = document.getElementById('discover-groups-section');
+        const discoverEventsSection = document.getElementById('discover-events-section');
+        const exploreHeader = document.getElementById('explore-header');
+        const discoverHeader = document.getElementById('discover-header');
+        const eventsHeader = document.getElementById('events-header');
+        const groupsCard = document.getElementById('groups-card');
+        const eventsCard = document.getElementById('events-card');
+        const backToExploreBtn = document.getElementById('back-to-explore');
+        const backToExploreFromEventsBtn = document.getElementById('back-to-explore-from-events');
+        const blueBoxContainer = document.getElementById('blue-box-container');
+        const eventsBlueBoxContainer = document.getElementById('events-blue-box-container');
+        
+        // Navigate to Discover Groups
+        groupsCard.addEventListener('click', function() {
+            exploreSection.classList.add('hidden');
+            discoverGroupsSection.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Navigate back to Explore Queyside
+        backToExploreBtn.addEventListener('click', function() {
+            discoverGroupsSection.classList.add('hidden');
+            exploreSection.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active state from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white', 'shadow-md', '-translate-y-1', 'border-transparent');
+                    btn.classList.add('bg-white', 'dark:bg-card-dark', 'text-gray-700', 'dark:text-gray-200', 'shadow-sm', 'border-gray-100', 'dark:border-gray-700');
+                });
+                
+                // Add active state to clicked button
+                this.classList.remove('bg-white', 'dark:bg-card-dark', 'text-gray-700', 'dark:text-gray-200', 'shadow-sm', 'border-gray-100', 'dark:border-gray-700');
+                this.classList.add('bg-primary', 'text-white', 'shadow-md', '-translate-y-1', 'border-transparent');
+                
+                // Get the filter category
+                const category = this.getAttribute('data-filter');
+                console.log('Filter clicked:', category);
+                
+                // Filter the cards
+                groupCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (cardCategory === category) {
+                        card.classList.remove('hidden');
+                        // Add fade-in animation
+                        card.style.animation = 'fadeIn 0.3s ease-in';
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                
+                // Reset scroll position
+                scrollContainer.scrollTop = 0;
+                updatePaginationDots();
+            });
+        });
+        
+        // Update pagination dots based on scroll position
+        let scrollTimeout;
+        function updatePaginationDots() {
+            const scrollTop = scrollContainer.scrollTop;
+            const scrollHeight = scrollContainer.scrollHeight;
+            const clientHeight = scrollContainer.clientHeight;
+            const scrollPercentage = scrollTop / (scrollHeight - clientHeight);
+            
+            // Determine which page we're on (0-based index)
+            const currentPage = Math.round(scrollPercentage);
+            
+            paginationDots.forEach((dot, index) => {
+                if (index === currentPage) {
+                    dot.classList.remove('opacity-30');
+                    dot.classList.add('opacity-100');
+                } else {
+                    dot.classList.remove('opacity-100');
+                    dot.classList.add('opacity-30');
+                }
+            });
+        }
+        
+        // Snap to nearest page after scrolling stops
+        function snapToPage() {
+            const scrollTop = scrollContainer.scrollTop;
+            const scrollHeight = scrollContainer.scrollHeight;
+            const clientHeight = scrollContainer.clientHeight;
+            const maxScroll = scrollHeight - clientHeight;
+            
+            // If scrolled past halfway, snap to page 2 (bottom), otherwise snap to page 1 (top)
+            if (scrollTop > maxScroll / 2) {
+                scrollContainer.scrollTo({ top: maxScroll, behavior: 'smooth' });
+            } else {
+                scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+        
+        // Listen to scroll events
+        scrollContainer.addEventListener('scroll', function() {
+            updatePaginationDots();
+            
+            // Clear previous timeout
+            clearTimeout(scrollTimeout);
+            
+            // Set new timeout to snap after scrolling stops
+            scrollTimeout = setTimeout(snapToPage, 150);
+        });
+        
+        // Navigate to Discover Events with morph transition
+        eventsCard.addEventListener('click', function() {
+            // Get the position and dimensions of the clicked Events card
+            const cardRect = eventsCard.getBoundingClientRect();
+            
+            // Slide out explore header to the left
+            exploreHeader.classList.remove('translate-x-0', 'opacity-100');
+            exploreHeader.classList.add('-translate-x-full', 'opacity-0');
+            
+            // Fade out other cards in explore section
+            setTimeout(() => {
+                exploreSection.classList.remove('opacity-100');
+                exploreSection.classList.add('opacity-0');
+            }, 100);
+            
+            // Hide original card
+            eventsCard.style.opacity = '0';
+            
+            setTimeout(() => {
+                // Hide explore section and show discover events section
+                exploreSection.classList.add('hidden');
+                discoverEventsSection.classList.remove('hidden');
+                discoverEventsSection.classList.remove('opacity-0');
+                discoverEventsSection.classList.add('opacity-100');
+                
+                // Get the final blue box position
+                const blueBoxRect = eventsBlueBoxContainer.getBoundingClientRect();
+                
+                // Calculate scale factors
+                const scaleX = cardRect.width / blueBoxRect.width;
+                const scaleY = cardRect.height / blueBoxRect.height;
+                
+                // Calculate translation needed
+                const translateX = cardRect.left - blueBoxRect.left;
+                const translateY = cardRect.top - blueBoxRect.top;
+                
+                // Set initial state: blue box starts at card position/size
+                eventsBlueBoxContainer.style.transformOrigin = 'top left';
+                eventsBlueBoxContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`;
+                eventsBlueBoxContainer.style.opacity = '1';
+                eventsBlueBoxContainer.style.transition = 'none';
+                
+                // Hide events initially
+                const allEventCards = document.querySelectorAll('.event-card');
+                allEventCards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.8)';
+                });
+                
+                // Force reflow
+                eventsBlueBoxContainer.offsetHeight;
+                
+                // Animate to final position
+                setTimeout(() => {
+                    eventsBlueBoxContainer.style.transition = 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+                    eventsBlueBoxContainer.style.transform = 'translate(0, 0) scale(1, 1)';
+                    
+                    // Slide in events header from the right
+                    eventsHeader.classList.remove('translate-x-full', 'opacity-0');
+                    eventsHeader.classList.add('translate-x-0', 'opacity-100');
+                    
+                    // Fade in event cards with stagger effect after box expands
+                    setTimeout(() => {
+                        allEventCards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.style.transition = 'all 0.5s ease-in-out';
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, index * 80);
+                        });
+                    }, 400);
+                }, 50);
+                
+                // Reset for next time
+                eventsCard.style.opacity = '1';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 500);
+        });
+        
+        // Navigate back to Explore from Events
+        backToExploreFromEventsBtn.addEventListener('click', function() {
+            // Slide out events header to the left
+            eventsHeader.classList.remove('translate-x-0', 'opacity-100');
+            eventsHeader.classList.add('-translate-x-full', 'opacity-0');
+            
+            // Fade out discover events section
+            setTimeout(() => {
+                discoverEventsSection.classList.remove('opacity-100');
+                discoverEventsSection.classList.add('opacity-0');
+                eventsBlueBoxContainer.style.opacity = '0';
+            }, 200);
+            
+            setTimeout(() => {
+                // Reset blue box transform
+                eventsBlueBoxContainer.style.transform = 'translate(0, 0) scale(1, 1)';
+                eventsBlueBoxContainer.style.transformOrigin = 'top left';
+                
+                // Hide discover events and show explore
+                discoverEventsSection.classList.add('hidden');
+                exploreSection.classList.remove('hidden');
+                
+                // Reset events header position for next time
+                eventsHeader.classList.remove('-translate-x-full');
+                eventsHeader.classList.add('translate-x-full');
+                
+                // Fade in explore section
+                setTimeout(() => {
+                    exploreSection.classList.remove('opacity-0');
+                    exploreSection.classList.add('opacity-100');
+                    
+                    // Slide in explore header from the right
+                    exploreHeader.classList.remove('-translate-x-full', 'opacity-0');
+                    exploreHeader.classList.add('translate-x-0', 'opacity-100');
+                }, 50);
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 500);
+        });
+        
+        // Initial update
+        updatePaginationDots();
+
+</body></html>
+
