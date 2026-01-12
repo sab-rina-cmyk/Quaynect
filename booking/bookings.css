@@ -96,6 +96,7 @@ html, body {
     -webkit-backdrop-filter: blur(15px);
     transition: transform 0.2s, background-color 0.2s;
     flex-shrink: 0;
+    margin-right: 16px;
     text-decoration: none;
 }
 
@@ -114,7 +115,7 @@ html, body {
     color: white;
     font-size: 18px;
     font-weight: 700;
-    text-align: center;
+    text-align: left;
     flex-grow: 1;
     letter-spacing: -0.5px;
 }

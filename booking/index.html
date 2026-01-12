@@ -26,7 +26,7 @@
         </header>
 
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Amenities">
+            <img src="resource-hub.png" alt="Resource Hub">
         </div>
 
         <div class="scroll-wrapper">
@@ -169,6 +169,39 @@
                 <span>Profile</span>
             </div>
         </nav>
+
+        <!-- Booking Details Modal -->
+        <div id="booking-details-modal" class="modal-overlay hidden">
+            <div class="modal-card">
+                <button class="close-btn" id="modal-close-btn">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+                <h3 class="modal-title">Booking Details</h3>
+                <div class="modal-content-area">
+                    <div class="modal-image-container">
+                        <img id="modal-resource-image" src="" alt="Resource Image">
+                    </div>
+                    <h4 id="modal-resource-name">Resource Name</h4>
+                    <p id="modal-resource-desc" class="text-secondary">Short description of the item.</p>
+                    
+                    <div class="modal-detail-row">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                        <span id="modal-booking-time">Today, 2:00 PM</span>
+                    </div>
+                    <div class="modal-detail-row" id="modal-due-time-row">
+                        <ion-icon name="time-outline"></ion-icon>
+                        <span id="modal-due-time">Due: 3:00 PM tomorrow</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <ion-icon name="location-outline"></ion-icon>
+                        <span>Quayside Hub - Desk A</span>
+                    </div>
+                    
+                    <button class="modal-action-btn primary" id="modal-view-resource-btn">View Resource</button>
+                    <button class="modal-action-btn secondary" id="modal-cancel-booking-btn">Cancel Booking</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="../script.js"></script>
     <script src="bookings.js"></script>
