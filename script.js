@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Determine path depth for navigation
-    const knownFolders = ['payments', 'booking', 'digital-key', 'resources', 'points', 'packages'];
+    const knownFolders = ['payments', 'booking', 'digital-key', 'community', 'points', 'packages'];
     const isInSubfolder = knownFolders.some(folder => window.location.pathname.includes('/' + folder + '/'));
     const prefix = isInSubfolder ? '../' : '';
 
@@ -318,18 +318,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (insurancePill) insurancePill.addEventListener('click', navigateToInsurance);
     if (insuranceCard) insuranceCard.addEventListener('click', navigateToInsurance);
 
-    // Resources Navigation
-    const resourcesCardId = document.querySelector('[data-id="card-resources"]');
-    const billingResourcesCard = document.getElementById('resources-card');
-    const navigateToResources = (e) => {
+    // Community Navigation
+    const communityCardId = document.querySelector('[data-id="card-community"]');
+    const communityCard = document.getElementById('community-card');
+    const navigateToCommunity = (e) => {
         const target = e.currentTarget;
         target.style.transform = 'scale(0.96)';
         setTimeout(() => {
-            window.location.href = prefix + 'resources/index.html';
+            window.location.href = prefix + 'community/index.html';
         }, 100);
     };
-    if (resourcesCardId) resourcesCardId.addEventListener('click', navigateToResources);
-    if (billingResourcesCard) billingResourcesCard.addEventListener('click', navigateToResources);
+    if (communityCardId) communityCardId.addEventListener('click', navigateToCommunity);
+    if (communityCard) communityCard.addEventListener('click', navigateToCommunity);
 
     // Booking Navigation
     const bookingCardId = document.querySelector('[data-id="card-booking"]');
@@ -520,6 +520,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     section.style.display = hasVisible ? '' : 'none';
                 }
             });
+        });
+    }
+
+    // --- Points Card Flip ---
+    const flipCard = document.getElementById('points-card-flip');
+    if (flipCard) {
+        flipCard.addEventListener('click', () => {
+            flipCard.classList.toggle('flipped');
         });
     }
 });
