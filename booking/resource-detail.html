@@ -15,11 +15,19 @@
 </head>
 <body>
     <div class="app-container detail-page-container">
-        <!-- Hero Section -->
-        <div class="detail-hero">
-            <button class="back-circles-btn" id="back-btn">
+        <!-- Header -->
+        <header class="bookings-header fixed-header">
+            <button class="back-btn" id="back-btn">
                 <ion-icon name="chevron-back-outline"></ion-icon>
             </button>
+            <h1 class="header-title" id="page-title">Resource Detail</h1>
+            <a href="bookmarks.html" class="header-action-btn">
+                <ion-icon name="bookmark-outline"></ion-icon>
+            </a>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="detail-hero">
             <div class="detail-image-container">
                 <img id="resource-image" src="" alt="Resource Image">
             </div>
@@ -31,15 +39,16 @@
                 <button class="reserve-btn">Reserve</button>
             </div>
 
-            <!-- Info Box -->
-            <div class="info-card">
-                <div class="info-row">
-                    <span class="info-label">Availability</span>
-                    <span class="info-value available" id="availability-text">Available Now</span>
+            <!-- Simplistic Info Bar -->
+            <div class="resource-info-bar">
+                <div class="info-item">
+                    <span class="info-dot" id="status-dot"></span>
+                    <span id="availability-text">Loading...</span>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">Tier</span>
-                    <span class="info-value" id="tier-text">Tier 1</span>
+                <div class="info-separator"></div>
+                <div class="info-item">
+                    <ion-icon name="ribbon-outline"></ion-icon>
+                    <span id="tier-text">Tier...</span>
                 </div>
             </div>
 

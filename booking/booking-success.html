@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - Quaynect</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="bookings.css">
+    <link rel="stylesheet" href="success.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="app-container success-page">
+        <div class="success-content">
+            <div class="success-icon-wrapper">
+                <div class="success-circle">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                </div>
+            </div>
+
+            <h1 class="success-title">Booking Confirmed!</h1>
+            <p class="success-msg">Your resource has been reserved and is ready for pickup.</p>
+
+            <div class="booking-details-card">
+                <div class="detail-row">
+                    <span class="detail-label">Pickup Date</span>
+                    <span class="detail-value" id="disp-date">--</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Pickup Time</span>
+                    <span class="detail-value" id="disp-time">--</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Location</span>
+                    <span class="detail-value">Quayside Hub - Desk A</span>
+                </div>
+            </div>
+
+            <div id="hold-note" class="hold-note" style="display: none;">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                <p>Note: This item will be on hold for the next hour only.</p>
+            </div>
+
+            <div class="success-actions">
+                <button class="action-btn calendar-btn" id="add-to-calendar">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    Add to Calendar
+                </button>
+                <button class="action-btn home-btn" id="go-home">
+                    Back to Bookings
+                </button>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="nav-item">
+                <ion-icon name="home-outline"></ion-icon>
+                <span>Home</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+                <span>Chat</span>
+            </div>
+            <div class="nav-item active">
+                <ion-icon name="calendar"></ion-icon>
+                <span>Bookings</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="person-outline"></ion-icon>
+                <span>Profile</span>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const dateStr = params.get('date');
+            const timeStr = params.get('time');
+            const isNow = params.get('type') === 'now';
+
+            const dateEl = document.getElementById('disp-date');
+            const timeEl = document.getElementById('disp-time');
+            const holdNote = document.getElementById('hold-note');
+            const calendarBtn = document.getElementById('add-to-calendar');
+
+            if (isNow) {
+                dateEl.innerText = 'Today';
+                timeEl.innerText = 'Immediate Pickup';
+                if (holdNote) holdNote.style.display = 'flex';
+                if (calendarBtn) calendarBtn.style.display = 'none';
+            } else if (dateStr && timeStr) {
+                const dateObj = new Date(dateStr);
+                dateEl.innerText = dateObj.toLocaleDateString('en-US', { 
+                    weekday: 'long', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                timeEl.innerText = timeStr;
+            }
+
+            document.getElementById('go-home').addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+
+            document.getElementById('add-to-calendar').addEventListener('click', () => {
+                alert('Event added to your device calendar!');
+            });
+        });
+    </script>
+</body>
+</html>

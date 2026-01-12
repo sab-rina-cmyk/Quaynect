@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Category - Residency App</title>
+    <title>My Bookmarks - Quaynect</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="bookings.css">
     <link rel="stylesheet" href="category.css">
@@ -12,42 +12,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6B7280;
+        }
+        .empty-state ion-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+    </style>
 </head>
 <body>
     <div class="app-container">
         <!-- Header -->
         <header class="bookings-header fixed-header">
-            <button class="back-btn" id="category-back-btn">
+            <button class="back-btn" id="back-btn">
                 <ion-icon name="chevron-back-outline"></ion-icon>
             </button>
-            <h1 class="header-title" id="page-title">Category</h1>
-            <a href="bookmarks.html" class="header-action-btn">
-                <ion-icon name="bookmark-outline"></ion-icon>
-            </a>
+            <h1 class="header-title">My Bookmarks</h1>
+            <div style="width: 40px;"></div>
         </header>
 
         <div class="category-content">
-            <div class="search-section">
-                <div class="search-container">
-                    <ion-icon name="search-outline"></ion-icon>
-                    <input type="text" placeholder="Search" id="search-input">
-                    <ion-icon name="mic-outline" class="mic-icon"></ion-icon>
-                </div>
-                <button class="filter-btn">
-                    <ion-icon name="options-outline"></ion-icon>
-                </button>
+            <div class="resources-grid" id="bookmarks-grid">
+                <!-- Bookmarked data populated via bookmarks.js -->
             </div>
-
-            <div class="filter-chips">
-                <div class="chip active">All</div>
-                <div class="chip">Cleaning</div>
-                <div class="chip">Electrical</div>
-                <div class="chip">Hand tools</div>
-                <div class="chip">Household</div>
-            </div>
-
-            <div class="resources-grid" id="resources-grid">
-                <!-- Data populated via category.js -->
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <ion-icon name="bookmark-outline"></ion-icon>
+                <p>You haven't bookmarked any resources yet.</p>
             </div>
         </div>
 
@@ -71,6 +66,6 @@
             </div>
         </nav>
     </div>
-    <script src="category.js"></script>
+    <script src="bookmarks.js"></script>
 </body>
 </html>

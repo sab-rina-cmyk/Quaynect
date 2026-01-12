@@ -1,28 +1,7 @@
-body {
-    overflow: auto !important; /* Override bookings.css hidden overflow */
-}
-
 .category-content {
     padding: 88px 0 100px; /* Reduced side padding to handle chips scroll */
     min-height: 100vh;
     background-color: #F9FAFB;
-}
-
-.fixed-header {
-    background: #F9FAFB !important;
-    border-bottom: none;
-}
-
-.fixed-header .header-title {
-    color: var(--text-color) !important;
-    font-weight: 700;
-}
-
-.fixed-header .back-btn {
-    background: white !important;
-    color: var(--text-color) !important;
-    border: none !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .search-section {
@@ -121,7 +100,18 @@ body {
     gap: 16px;
     padding: 0 var(--padding-page);
 }
+@media (min-width: 768px) {
+    .resources-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
 
+@media (min-width: 1024px) {
+    .resources-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 .resource-card {
     background: white;
     border-radius: 24px;
@@ -169,6 +159,17 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     color: var(--accent-blue);
     font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.bookmark-btn:active {
+    transform: scale(0.9);
+}
+
+.bookmark-btn.active {
+    background-color: var(--accent-blue);
+    color: white;
 }
 
 .resource-info {

@@ -25,7 +25,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "https://placehold.co/600x400/7c3aed/white?text=Measuring+Tape",
+    "image": "tools/measuring-tape.jpeg",
     "desc": "25ft heavy-duty locking tape measure.",
     "instructions": "Pull the metal tab to extend the tape. Push the thumb lock down to hold the position. Release carefully to let it retract."
   },
@@ -65,7 +65,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "https://placehold.co/600x400/7c3aed/white?text=Spot+Cleaner",
+    "image": "tools/spot-cleaner.jpeg",
     "desc": "Portable carpet and upholstery cleaner for stain removal."
   },
   {
@@ -110,7 +110,7 @@
     "category": "Tools",
     "tier": 2,
     "availability": false,
-    "image": "https://placehold.co/600x400/7c3aed/white?text=Sewing+Machine",
+    "image": "tools/sewing-machine.jpeg",
     "desc": "Heavy-duty machine suitable for canvas, denim, and light leather."
   },
   {
@@ -119,7 +119,7 @@
     "category": "Tools",
     "tier": 1,
     "availability": true,
-    "image": "https://placehold.co/600x400/7c3aed/white?text=Vacuum",
+    "image": "tools/vacuum.jpeg",
     "desc": "Industrial wet/dry shop vacuum."
   },
   {
@@ -148,7 +148,7 @@
     "category": "Recreation",
     "tier": 1,
     "availability": false,
-    "image": "recreation/spikeball-set.jpeg",
+    "image": "recreation/spikebell-set.jpeg",
     "desc": "Standard roundnet kit with net, frame, and 3 balls.",
     "instructions": "Assemble the yellow rim and attach the net tightly. Bounce the ball off the net to play. Disassemble carefully to store."
   },

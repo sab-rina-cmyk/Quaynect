@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Options - Quaynect</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="bookings.css">
+    <link rel="stylesheet" href="reserve-options.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="bookings-header fixed-header">
+            <button class="back-btn" id="back-btn">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <h1 class="header-title">Reserve</h1>
+            <div style="width: 40px;"></div> <!-- Spacer for symmetry -->
+        </header>
+
+        <div class="options-content">
+            <h2 class="options-heading">Choose a time</h2>
+            <p class="options-subheading">When would you like to use this resource?</p>
+
+            <div class="option-cards">
+                <button class="option-card" id="reserve-now">
+                    <div class="option-icon">
+                        <ion-icon name="flash-outline"></ion-icon>
+                    </div>
+                    <div class="option-details">
+                        <span class="option-title">Reserve for Now</span>
+                        <span class="option-desc">Start using it immediately</span>
+                    </div>
+                    <ion-icon name="chevron-forward-outline" class="forward-icon"></ion-icon>
+                </button>
+
+                <div class="option-group" id="reserve-later-group">
+                    <button class="option-card" id="reserve-later">
+                        <div class="option-icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </div>
+                        <div class="option-details">
+                            <span class="option-title">Reserve for Later</span>
+                            <span class="option-desc">Schedule a time in the future</span>
+                        </div>
+                        <ion-icon name="chevron-forward-outline" class="forward-icon toggle-icon"></ion-icon>
+                    </button>
+
+                    <!-- Calendar Dropdown -->
+                    <div class="calendar-dropdown" id="calendar-dropdown">
+                        <div class="calendar-header">
+                            <button id="prev-month"><ion-icon name="chevron-back-outline"></ion-icon></button>
+                            <h3 id="current-month">Month Year</h3>
+                            <button id="next-month"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+                        </div>
+                        <div class="calendar-weekdays">
+                            <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+                        </div>
+                        <div class="calendar-days" id="calendar-days">
+                            <!-- Days will be injected here -->
+                        </div>
+
+                        <div class="time-selection" id="time-selection" style="display: none;">
+                            <h4>Select Pickup Time</h4>
+                            <div class="time-grid" id="time-grid">
+                                <!-- Time slots will be injected here -->
+                            </div>
+                        </div>
+
+                        <div class="calendar-footer">
+                            <button class="confirm-date-btn" id="confirm-date" disabled>Confirm Pickup Date</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation (for consistency) -->
+        <nav class="bottom-nav">
+            <div class="nav-item">
+                <ion-icon name="home-outline"></ion-icon>
+                <span>Home</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+                <span>Chat</span>
+            </div>
+            <div class="nav-item active">
+                <ion-icon name="calendar"></ion-icon>
+                <span>Bookings</span>
+            </div>
+            <div class="nav-item">
+                <ion-icon name="person-outline"></ion-icon>
+                <span>Profile</span>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        document.getElementById('back-btn').addEventListener('click', () => {
+            window.history.back();
+        });
+
+        const reserveLaterBtn = document.getElementById('reserve-later');
+        const calendarDropdown = document.getElementById('calendar-dropdown');
+        const reserveLaterGroup = document.getElementById('reserve-later-group');
+        const calendarDays = document.getElementById('calendar-days');
+        const currentMonthEl = document.getElementById('current-month');
+        const confirmBtn = document.getElementById('confirm-date');
+        const prevMonthBtn = document.getElementById('prev-month');
+        const nextMonthBtn = document.getElementById('next-month');
+        const timeSelection = document.getElementById('time-selection');
+        const timeGrid = document.getElementById('time-grid');
+
+        let date = new Date();
+        let selectedDate = null;
+        let selectedTime = null;
+
+        reserveLaterBtn.addEventListener('click', () => {
+            reserveLaterGroup.classList.toggle('active');
+            calendarDropdown.classList.toggle('active');
+            renderCalendar();
+        });
+
+        prevMonthBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            date.setMonth(date.getMonth() - 1);
+            renderCalendar();
+        });
+
+        nextMonthBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            date.setMonth(date.getMonth() + 1);
+            renderCalendar();
+        });
+
+        function renderCalendar() {
+            calendarDays.innerHTML = '';
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            
+            currentMonthEl.innerText = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date);
+
+            const firstDayOfMonth = new Date(year, month, 1).getDay();
+            const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
+            const today = new Date();
+
+            // Empty slots for previous month
+            for (let i = 0; i < firstDayOfMonth; i++) {
+                const emptyDiv = document.createElement('div');
+                emptyDiv.classList.add('calendar-day', 'empty');
+                calendarDays.appendChild(emptyDiv);
+            }
+
+            for (let i = 1; i <= lastDateOfMonth; i++) {
+                const dayEl = document.createElement('div');
+                dayEl.classList.add('calendar-day');
+                dayEl.innerText = i;
+
+                const curDay = new Date(year, month, i);
+                
+                // Set today
+                if (curDay.toDateString() === today.toDateString()) {
+                    dayEl.classList.add('today');
+                }
+
+                // Check availability (Mock: All days today and in future are available)
+                // Let's make weekends unavailable for demonstration
+                const isWeekend = curDay.getDay() === 0 || curDay.getDay() === 6;
+                const isPast = curDay < new Date(today.setHours(0,0,0,0));
+
+                if (isPast || isWeekend) {
+                    dayEl.classList.add('unavailable');
+                } else {
+                    dayEl.classList.add('available');
+                    dayEl.addEventListener('click', () => selectDate(dayEl, curDay));
+                }
+
+                if (selectedDate && curDay.toDateString() === selectedDate.toDateString()) {
+                    dayEl.classList.add('selected');
+                }
+
+                calendarDays.appendChild(dayEl);
+            }
+        }
+
+        function selectDate(element, day) {
+            document.querySelectorAll('.calendar-day.selected').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+            selectedDate = day;
+            
+            // Show time selection
+            timeSelection.style.display = 'block';
+            renderTimeSlots();
+            updateConfirmBtn();
+        }
+
+        function renderTimeSlots() {
+            timeGrid.innerHTML = '';
+            const startHour = 9;
+            const endHour = 18; // 6:00 PM
+            
+            for (let hour = startHour; hour <= endHour; hour++) {
+                for (let minutes of [0, 30]) {
+                    if (hour === endHour && minutes === 30) break; // Don't go past 6:00 PM
+
+                    const timeStr = formatTime(hour, minutes);
+                    const slot = document.createElement('div');
+                    slot.classList.add('time-slot');
+                    slot.innerText = timeStr;
+
+                    if (selectedTime === timeStr) {
+                        slot.classList.add('selected');
+                    }
+
+                    slot.addEventListener('click', () => {
+                        document.querySelectorAll('.time-slot').forEach(el => el.classList.remove('selected'));
+                        slot.classList.add('selected');
+                        selectedTime = timeStr;
+                        updateConfirmBtn();
+                    });
+
+                    timeGrid.appendChild(slot);
+                }
+            }
+        }
+
+        function formatTime(hour, minutes) {
+            const ampm = hour >= 12 ? 'PM' : 'AM';
+            const displayHour = hour % 12 || 12;
+            const displayMinutes = minutes === 0 ? '00' : '30';
+            return `${displayHour}:${displayMinutes} ${ampm}`;
+        }
+
+        function updateConfirmBtn() {
+            confirmBtn.disabled = !(selectedDate && selectedTime);
+            if (selectedDate && selectedTime) {
+                confirmBtn.innerText = `Confirm Pickup for ${selectedTime}`;
+            } else {
+                confirmBtn.innerText = 'Confirm Pickup Date & Time';
+            }
+        }
+
+        document.getElementById('reserve-now').addEventListener('click', () => {
+            window.location.href = `terms-and-conditions.html?id=${new URLSearchParams(window.location.search).get('id')}&type=now`;
+        });
+
+        confirmBtn.addEventListener('click', () => {
+            if (selectedDate && selectedTime) {
+                window.location.href = `terms-and-conditions.html?id=${new URLSearchParams(window.location.search).get('id')}&date=${selectedDate.toISOString()}&time=${selectedTime}`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const resourceId = parseInt(urlParams.get('id'));
 
     if (!resourceId) {
-        window.location.href = 'bookings.html';
+        window.location.href = 'booking.html';
         return;
     }
 
@@ -21,6 +21,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    // Reserve Button
+    const reserveBtn = document.querySelector('.reserve-btn');
+    if (reserveBtn) {
+        reserveBtn.addEventListener('click', () => {
+            window.location.href = `reserve-options.html?id=${resourceId}`;
+        });
+    }
+
     try {
         const response = await fetch('data.json');
         const allData = await response.json();
@@ -30,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             renderDetails(item);
         } else {
             console.error('Item not found');
-            window.location.href = 'bookings.html';
+            window.location.href = 'booking.html';
         }
     } catch (error) {
         console.error('Error loading item:', error);
@@ -39,6 +47,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function renderDetails(item) {
     document.getElementById('resource-name').innerText = item.name;
+    const pageTitle = document.getElementById('page-title');
+    if (pageTitle) pageTitle.innerText = item.name;
+    
     document.getElementById('resource-desc').innerText = item.desc || "No description available.";
     document.getElementById('resource-instructions').innerText = item.instructions || "No specific instructions provided. Please handle with care.";
     
@@ -49,12 +60,13 @@ function renderDetails(item) {
     };
 
     const availText = document.getElementById('availability-text');
+    const statusDot = document.getElementById('status-dot');
     if (item.availability) {
         availText.innerText = "Available Now";
-        availText.className = "info-value available";
+        if (statusDot) statusDot.className = "info-dot available";
     } else {
         availText.innerText = "Currently Booked";
-        availText.className = "info-value booked";
+        if (statusDot) statusDot.className = "info-dot booked";
     }
 
     document.getElementById('tier-text').innerText = `Tier ${item.tier}`;

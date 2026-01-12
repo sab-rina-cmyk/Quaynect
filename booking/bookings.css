@@ -1,6 +1,7 @@
 /* Bookings Page Core Layout */
-body {
-    overflow: hidden; /* Prevent body scroll in favor of custom wrapper */
+html, body {
+    overflow-y: auto !important; /* Force allow body scroll */
+    min-height: 100vh;
 }
 
 .hero-image {
@@ -9,8 +10,25 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     overflow: hidden;
     z-index: 1;
+}
+
+@media (min-width: 1024px) {
+    .hero-image {
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-image {
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 768px;
+    }
 }
 
 .hero-image::after {
@@ -42,6 +60,88 @@ body {
     align-items: center;
     justify-content: space-between;
     background: transparent;
+    transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
+}
+
+@media (min-width: 1024px) {
+    .bookings-header {
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .bookings-header {
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 768px;
+    }
+}
+
+.bookings-header .back-btn,
+.bookings-header .header-action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: transform 0.2s, background-color 0.2s;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.bookings-header .back-btn:hover,
+.bookings-header .header-action-btn:hover {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.bookings-header .back-btn:active,
+.bookings-header .header-action-btn:active {
+    transform: scale(0.9);
+}
+
+.bookings-header .header-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    flex-grow: 1;
+    letter-spacing: -0.5px;
+}
+
+/* Theme for light backgrounds (Detail/Category pages) */
+.bookings-header.fixed-header {
+    background: rgba(249, 250, 251, 0.9) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.bookings-header.fixed-header .header-title {
+    color: var(--text-color) !important;
+}
+
+.bookings-header.fixed-header .back-btn,
+.bookings-header.fixed-header .header-action-btn {
+    background: white;
+    color: var(--text-color);
+    border: 1px solid #F1F5F9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.bookings-header.fixed-header .back-btn:active,
+.bookings-header.fixed-header .header-action-btn:active {
+    background: #F8FAFC;
 }
 
 /* The fixed viewport for scrolling */
@@ -57,6 +157,22 @@ body {
     -webkit-overflow-scrolling: touch;
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
+}
+
+@media (min-width: 1024px) {
+    .scroll-wrapper {
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .scroll-wrapper {
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 768px;
+    }
 }
 
 .scroll-spacer {
@@ -340,49 +456,4 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--text-color);
-}
-
-.bookings-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;
-    transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
-}
-
-.bookings-header .back-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.bookings-header .back-btn:active {
-    transform: scale(0.95);
-    background: rgba(255, 255, 255, 0.25);
-}
-
-.bookings-header .header-title {
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
-    flex-grow: 1;
-    margin-left: 16px;
-    letter-spacing: -0.5px;
 }
