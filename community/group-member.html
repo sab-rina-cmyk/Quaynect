@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GreenThumb Club Member Dashboard</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="styles.css" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        "primary-dark": "#2563EB",
+                        "background-light": "#F3F4F6",
+                        "background-dark": "#111827",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-gray-900 dark:text-gray-100 antialiased min-h-screen pb-24">
+    <!-- Status Bar -->
+    <div class="px-6 py-3 flex justify-between items-center text-sm font-semibold dark:text-white">
+        <span>9:41</span>
+        <div class="flex items-center gap-1">
+            <span class="material-icons-round text-base">signal_cellular_alt</span>
+            <span class="material-icons-round text-base">wifi</span>
+            <span class="material-icons-round text-base">battery_full</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="px-4 pt-2 pb-4 sticky top-0 z-20 bg-background-light dark:bg-background-dark/95 backdrop-blur-sm">
+        <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="p-2 -ml-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+                    <span class="material-icons-round text-2xl">arrow_back_ios_new</span>
+                </a>
+                <h1 class="text-3xl font-bold tracking-tight">GreenThumb Club</h1>
+            </div>
+            <button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+                <span class="material-icons-round text-2xl text-gray-600 dark:text-gray-300">help_outline</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="space-y-6 px-5">
+        <!-- Hero Banner -->
+        <section>
+            <div class="relative h-48 w-full rounded-3xl overflow-hidden shadow-lg">
+                <img alt="Community garden with people working" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf7uGU87NFMx7G8oes0XT7cPCy71rrvcIf3hO0yjD0sZu65cA-Xw7F9RUwuISAeZref-rdN9HoacDdG8JN30RmrwqH_lWXwl_mhPTC2GbfTrrV1z0Fh1ZCuNgi8rpcyhv_eXJAWrHjCbQFkEW2ZeWuDp_KraHzcM-XKJw58sM94Y9ZBnYK_LIkwLXsDqpp-ybwnyPK9cXEeK_CumlSd2F-qExLlpytx1UMhp1t35woHO7dQmcW9xuLfLPJZ2rKI2-V-_GgjSirpQ"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">GreenThumb Club</h2>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="bg-green-500 w-2 h-2 rounded-full"></span>
+                            <p class="text-xs text-green-100">Active Community</p>
+                        </div>
+                    </div>
+                    <div class="bg-primary px-3 py-1 rounded-full flex items-center gap-1.5 shadow-lg">
+                        <span class="material-icons-round text-white text-xs">verified</span>
+                        <span class="text-xs font-bold text-white uppercase tracking-wider">Member</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="grid grid-cols-2 gap-3">
+            <button class="bg-primary hover:bg-primary-dark text-white font-semibold py-3.5 rounded-2xl shadow-md flex items-center justify-center gap-2 active:scale-95 transition-all">
+                <span class="material-icons-round text-lg">chat_bubble_outline</span>
+                Club Chat
+            </button>
+            <button class="bg-card-light dark:bg-card-dark text-gray-900 dark:text-white font-semibold py-3.5 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-800 flex items-center justify-center gap-2 active:scale-95 transition-all">
+                <span class="material-icons-round text-lg">post_add</span>
+                Post Update
+            </button>
+        </section>
+
+        <!-- Contributions Card -->
+        <section>
+            <div class="bg-gradient-to-br from-indigo-500 to-primary p-5 rounded-3xl shadow-lg text-white">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="font-bold text-lg">My Contributions</h3>
+                    <span class="material-icons-round opacity-80">stars</span>
+                </div>
+                <div class="flex justify-between items-end">
+                    <div>
+                        <p class="text-indigo-100 text-sm">Total Points</p>
+                        <p class="text-3xl font-bold">1,240</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-indigo-100 text-sm">Rank</p>
+                        <p class="text-xl font-bold">#4 in Club</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly Goals -->
+        <section>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold">Weekly Goals</h3>
+                <span class="text-sm font-medium text-primary cursor-pointer hover:underline">View All</span>
+            </div>
+            
+            <!-- Goal 1 -->
+            <div class="bg-card-light dark:bg-card-dark p-5 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-100 pr-8">Winter compost clean up! Bring your tools and join us.</h4>
+                </div>
+                <div class="w-full bg-gray-100 dark:bg-gray-700 h-6 rounded-full relative overflow-hidden mb-2">
+                    <div class="bg-green-500 h-full w-[72%] transition-all duration-1000"></div>
+                    <span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-gray-600 dark:text-white">215 / 300</span>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-primary font-bold text-sm">300 Points</span>
+                    <button class="bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-xl text-xs font-bold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        Contribute
+                    </button>
+                </div>
+            </div>
+
+            <!-- Goal 2 -->
+            <div class="bg-card-light dark:bg-card-dark p-5 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="flex justify-between items-start mb-3">
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-100">Prepare garden beds for winter.</h4>
+                </div>
+                <div class="w-full bg-gray-100 dark:bg-gray-700 h-6 rounded-full relative overflow-hidden mb-2">
+                    <div class="bg-amber-400 h-full w-[50%] transition-all duration-1000"></div>
+                    <span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-gray-700 dark:text-white">3 / 6</span>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-primary font-bold text-sm">60 Points</span>
+                    <button class="bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-xl text-xs font-bold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        Contribute
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tool Loans -->
+        <section>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold">Related Tool Loans</h3>
+                <span class="text-sm font-medium text-primary cursor-pointer hover:underline">All Tools</span>
+            </div>
+            <div class="flex overflow-x-auto gap-4 pb-4 hide-scrollbar -mx-5 px-5">
+                <!-- Tool 1 -->
+                <div class="min-w-[160px] bg-card-light dark:bg-card-dark rounded-3xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="h-32 bg-gray-50 dark:bg-gray-900 relative">
+                        <img alt="Garden Shovel" class="w-full h-full object-cover p-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYsr13CR0Se3cE-PescYdGrUcGwtKAzouA51j0irMgLU0TIhGiE1jSVgqeJSkCJBBRIN8mtDfnMuMuB7EcRcfUd6WISwOhgJW5rRV2QKHbHLMYcFtGzVWV6y2yTTuHWgdapU96TfWZxWMkDPuyJYRvDzw8Sg2Mu5iEY0Mizi3HLVnkKE9HmuH3UTbMd1X0fg-rfsTk9pTecuTQ1-Dvr1pnaEuONyz0HQkhMfALxG6assth2RPlQRteogsuweq5OeAQKnCM-coB8Q"/>
+                        <button class="absolute top-2 right-2 bg-white/80 dark:bg-black/40 p-1.5 rounded-full backdrop-blur-sm">
+                            <span class="material-icons-round text-xs">bookmark_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <p class="font-bold text-sm mb-1 truncate">Garden Shovel</p>
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            <span class="text-[10px] text-gray-500">Available</span>
+                        </div>
+                        <button class="w-full bg-primary text-white text-[10px] font-bold py-2 rounded-xl hover:bg-primary-dark transition">Borrow $0.54/hr</button>
+                    </div>
+                </div>
+
+                <!-- Tool 2 -->
+                <div class="min-w-[160px] bg-card-light dark:bg-card-dark rounded-3xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="h-32 bg-gray-50 dark:bg-gray-900 relative">
+                        <img alt="Garden Rake" class="w-full h-full object-cover p-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT3hTfrBb-W-gmzpLQgphqz5q9cMf_OW4JmzjkCYIye58NaJUeqFqD-lDy2LVYE-5mM8sw8ZtLxJ6R1uRv21P_Lve7H3IsKiOBCgePTcLPahnCCUUXpPwXWhDxu85jWG6YXgQ8SZCiG2lY2CY5ZJCNJUTdUfrhVNSRHlPOIzqjitW4xOchbaTzxH-tqDwG1GbLJfemWGJ6qBiaJu-h5aAcbz5PPExyQ6vMSVINu6diHz0sNXZFLyhZ8dMtqHCJ7B0UEYpOKYsdxg"/>
+                        <button class="absolute top-2 right-2 bg-white/80 dark:bg-black/40 p-1.5 rounded-full backdrop-blur-sm">
+                            <span class="material-icons-round text-xs">bookmark_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <p class="font-bold text-sm mb-1 truncate">Heavy Rake</p>
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                            <span class="text-[10px] text-gray-500">Few Left</span>
+                        </div>
+                        <button class="w-full bg-primary text-white text-[10px] font-bold py-2 rounded-xl hover:bg-primary-dark transition">Borrow $0.54/hr</button>
+                    </div>
+                </div>
+
+                <!-- Tool 3 -->
+                <div class="min-w-[160px] bg-card-light dark:bg-card-dark rounded-3xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div class="h-32 bg-gray-50 dark:bg-gray-900 relative">
+                        <img alt="Garden Gloves" class="w-full h-full object-cover p-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSLe743-2YoBWCmW8RB5zsT_tlbYGfoFHzMb92Ry64oGRGSUhR9oSmzqLaagOA5_FHcsq8n9jhvFMzuoHj_bBmjhnJoZwQlDLP0rLDBH9aOgXMTIAteTHaRmkK5W44N1RV8EF58lJs8OeK5qEJEGiWOPcAnwuN3eXHZuVU_1JX0jxC6cjcXdQywiGFAHv9TPBAq7zdFRXXMadzI2lMq7VRpi-gMb_3cVhkJl2twCfmvemwidqswtpL9ig2jXK7eW5cV9ZDFLGQAg"/>
+                        <button class="absolute top-2 right-2 bg-white/80 dark:bg-black/40 p-1.5 rounded-full backdrop-blur-sm">
+                            <span class="material-icons-round text-xs">bookmark_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <p class="font-bold text-sm mb-1 truncate">Durable Gloves</p>
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            <span class="text-[10px] text-gray-500">Available</span>
+                        </div>
+                        <button class="w-full bg-primary text-white text-[10px] font-bold py-2 rounded-xl hover:bg-primary-dark transition">Borrow $0.54/hr</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Guidelines -->
+        <section>
+            <h3 class="text-xl font-bold mb-4">Community Guidelines</h3>
+            <div class="bg-card-light dark:bg-card-dark rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                <button class="w-full flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800 active:bg-gray-50 dark:active:bg-gray-700 transition-colors">
+                    <span class="font-medium">Be Respectful</span>
+                    <span class="material-icons-round text-gray-400">chevron_right</span>
+                </button>
+                <button class="w-full flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800 active:bg-gray-50 dark:active:bg-gray-700 transition-colors">
+                    <span class="font-medium">Group Conduct</span>
+                    <span class="material-icons-round text-gray-400">chevron_right</span>
+                </button>
+                <button class="w-full flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-gray-700 transition-colors">
+                    <span class="font-medium">Reporting Issues</span>
+                    <span class="material-icons-round text-gray-400">chevron_right</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="mb-8">
+            <div class="bg-card-light dark:bg-card-dark p-6 rounded-3xl border border-dashed border-gray-300 dark:border-gray-700">
+                <h3 class="font-bold mb-2">Questions?</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Feel free to get in touch if you have any questions - Our team is always happy to help.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a class="bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 hover:bg-primary/20 transition" href="mailto:help@greenthumb.com">
+                        <span class="material-icons-round text-sm">alternate_email</span>
+                        Email Us
+                    </a>
+                    <button class="bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 hover:bg-primary/20 transition">
+                        <span class="material-icons-round text-sm">phone</span>
+                        000-000-000
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-6 pb-4">
+        <div class="flex justify-between items-center max-w-md mx-auto">
+            <a href="index.html" class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <span class="material-icons-round text-3xl">home</span>
+            </a>
+            <a href="index.html" class="flex flex-col items-center justify-center w-12 h-12 text-primary">
+                <span class="material-symbols-rounded text-3xl filled">chat_bubble</span>
+            </a>
+            <button class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <span class="material-icons-round text-3xl">construction</span>
+            </button>
+            <button class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <span class="material-icons-round text-3xl">account_circle</span>
+            </button>
+        </div>
+    </nav>
+</body>
+</html>
