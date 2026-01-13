@@ -3,21 +3,65 @@ document.addEventListener('DOMContentLoaded', async () => {
     const heroImage = document.querySelector('.hero-image');
     const scrollWrapper = document.querySelector('.scroll-wrapper');
     const heroHeight = heroImage.offsetHeight;
+    const header = document.querySelector('.bookings-header');
 
     scrollWrapper.addEventListener('scroll', () => {
         const scrollY = scrollWrapper.scrollTop;
         
         // Darken image as we scroll
-        // Map 0 -> heroHeight to 0.2 -> 0.7 darkness
-        const darkness = Math.min(0.7, 0.2 + (scrollY / heroHeight) * 0.5);
+        // Map 0 -> heroHeight to 0.2 -> 0.8 darkness
+        const darkness = Math.min(0.8, 0.2 + (scrollY / heroHeight) * 0.6);
         heroImage.style.setProperty('--hero-darkness', darkness);
+        
+        // Keep image visible but slightly parallax or scale
+        const scale = 1 + (scrollY / heroHeight) * 0.1;
+        heroImage.style.transform = `translateX(-50%) scale(${Math.min(1.2, scale)})`;
+
+        // Header visibility on scroll
+        if (scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     });
 
     // Back button functionality
-    const backBtn = document.querySelector('.bookings-header .back-btn');
+    const backBtn = document.getElementById('bookings-back-btn');
     if (backBtn) {
         backBtn.addEventListener('click', () => {
             window.location.href = '../index.html';
+        });
+    }
+
+    // Resident ID Modal Logic
+    const qrBtn = document.getElementById('qr-code-btn');
+    const residentModal = document.getElementById('resident-id-modal');
+    const residentCloseBtn = document.getElementById('resident-id-close-btn');
+
+    if (qrBtn && residentModal) {
+        qrBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            residentModal.classList.remove('hidden');
+            // Prevent scrolling on the main page while modal is open
+            document.body.style.overflow = 'hidden';
+            scrollWrapper.style.overflow = 'hidden';
+        });
+    }
+
+    if (residentCloseBtn && residentModal) {
+        const closeModal = () => {
+            residentModal.classList.add('hidden');
+            document.body.style.overflow = '';
+            scrollWrapper.style.overflow = 'auto';
+        };
+
+        residentCloseBtn.addEventListener('click', closeModal);
+
+        // Close when clicking overlay
+        residentModal.addEventListener('click', (e) => {
+            if (e.target === residentModal) {
+                closeModal();
+            }
         });
     }
 
