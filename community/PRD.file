@@ -1,0 +1,43 @@
+# Product Requirement Document (PRD) - Community Hub App
+
+## 1. Design System & UI Guidelines
+**Core Philosophy:** A clean, accessible mobile-first interface using Tailwind CSS.
+
+### 1.1 Color Palette (Strict Adherence)
+* **Primary Blue:** `#3B82F6` (Tailwind `bg-primary` / `text-primary`)
+* **Primary Dark:** `#2563EB` (Tailwind `bg-primary-dark`)
+* **Backgrounds:**
+    * Light Mode: `#F3F4F6` (`bg-background-light`)
+    * Dark Mode: `#111827` (`bg-background-dark`)
+* **Cards/Surfaces:**
+    * Light Mode: `#FFFFFF` (`bg-card-light`)
+    * Dark Mode: `#1F2937` (`bg-card-dark`)
+
+### 1.2 Typography & Shapes
+* **Font:** "Inter", sans-serif.
+* **Icons:** Material Icons Round & Material Symbols Rounded.
+* **Border Radius:** `rounded-2xl` (1rem) for cards; `rounded-full` for buttons/chips.
+
+### 1.3 Container "Safe Zones" (CRITICAL)
+* **The "Breathing Room" Rule:** ANY container that scrolls or contains interactive elements (shadows/hover lifts) MUST have internal padding.
+    * **Horizontal Lists:** MUST have `pt-4` (top padding) to prevent hover-lift clipping.
+    * **Grids/cards:** MUST have `pb-8` (bottom padding) to prevent shadow clipping.
+    * **Never** rely on margins for these safe zones.
+
+### 1.4 Advanced Motion & Interactions
+* **Card Hover:** Lift (`-translate-y-1`) + Blue Ring (`ring-2 ring-primary`) + Shadow (`shadow-lg`).
+* **Page Transitions (Morphs):**
+    * **Type:** Container Transform (Shared Element).
+    * **Behavior:** When a Category Card (e.g., Groups) is clicked, the Detail View MUST appear to expand from that card's position.
+    * **Anchor Points:** Use `transform-origin` matching the card's location (e.g., `top left` for the first card) to create a "stretching" effect.
+
+## 2. Technical Architecture
+
+### 2.1 File Structure (SPA)
+* **Single File System:** All views MUST reside in `index.html`. Do NOT create separate HTML files.
+* **View Management:** Views are separated by HTML Comments (``) and toggled using the `hidden` class.
+
+### 2.2 Navigation & Overlays
+* **Detail Views:** All secondary screens (Groups, Events) must be **Fixed Overlays**.
+    * **Class Requirement:** `fixed inset-0 z-50 bg-background-light overflow-y-auto`.
+    * **Why?** This prevents the expanded view from pushing the home content down.

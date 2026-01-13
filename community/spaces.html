@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaces - Community Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        "primary-dark": "#2563EB",
+                        "background-light": "#F3F4F6",
+                        "background-dark": "#111827",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-gray-900 dark:text-gray-100 antialiased min-h-screen flex justify-center">
+<div class="w-full max-w-[430px] min-h-screen bg-background-light dark:bg-background-dark relative overflow-hidden flex flex-col">
+    <!-- Status Bar -->
+    <div class="px-6 py-3 flex justify-between items-center text-sm font-semibold dark:text-white">
+        <span>9:41</span>
+        <div class="flex items-center gap-1">
+            <span class="material-icons-round text-base">signal_cellular_alt</span>
+            <span class="material-icons-round text-base">wifi</span>
+            <span class="material-icons-round text-base">battery_full</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="px-6 pt-2 pb-4">
+        <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+                <button onclick="window.location.href='index.html'" class="p-2 -ml-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+                    <span class="material-icons-round text-2xl">arrow_back</span>
+                </button>
+                <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-primary">
+                    <span class="material-icons-round">business</span>
+                </div>
+                <h1 class="text-3xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
+                    Spaces
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto px-6 space-y-6 pb-24 pt-2">
+        <!-- Content will be added here -->
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-6 pb-4 z-50">
+        <div class="flex justify-between items-center max-w-md mx-auto">
+            <button onclick="window.location.href='index.html'" class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <span class="material-icons-round text-3xl">home</span>
+            </button>
+            <button class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <span class="material-symbols-rounded text-3xl">chat_bubble</span>
+            </button>
+            <button class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <span class="material-icons-round text-3xl">construction</span>
+            </button>
+            <button class="flex flex-col items-center justify-center w-12 h-12 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <span class="material-icons-round text-3xl">account_circle</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Bottom Indicator -->
+    <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-slate-400/40 rounded-full"></div>
+</div>
+</body>
+</html>
