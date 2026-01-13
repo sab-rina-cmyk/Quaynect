@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Community Hub - Quayside</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,7 +160,7 @@
             width: 100%;
             max-width: 480px;
             z-index: 100;
-            padding: 12px 20px;
+            padding: calc(16px + env(safe-area-inset-top, 0px)) 20px 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -169,6 +169,27 @@
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid #F1F5F9;
             transition: all 0.3s ease;
+        }
+
+        /* Adjustments for taller screens (iPhone 17 Pro aspect ratio) */
+        @media screen and (max-aspect-ratio: 9/19) {
+            .app-container {
+                padding-bottom: calc(96px + env(safe-area-inset-bottom, 34px));
+            }
+            #events-scroll-container, #groups-scroll-container {
+                height: 550px !important; /* Increased from 420px/450px */
+            }
+            /* Increase What's New card height */
+            .snap-start.h-\[180px\] {
+                height: 240px !important;
+            }
+            .dashboard-section {
+                padding-top: 2.5rem;
+                padding-bottom: 2rem;
+            }
+            .grid-container {
+                gap: 20px !important;
+            }
         }
 
         .bookings-header .back-btn,
@@ -243,10 +264,12 @@
             </div>
         </header>
 
-        <div class="h-[64px]"></div>
+        <div class="h-[calc(76px+env(safe-area-inset-top,0px))]"></div>
 <main>
-<section class="pt-6">
-<h2 class="text-xl font-bold mb-6 px-5">What's New?</h2>
+<section class="pt-6 mb-10">
+    <div class="section-header mb-5 px-5">
+        <h2 class="text-xl font-bold">What's New?</h2>
+    </div>
 <div class="flex gap-4 overflow-x-auto hide-scrollbar pb-6 snap-x snap-mandatory px-5 scroll-px-5">
     <!-- Card 1 -->
     <div class="min-w-[85%] snap-start relative h-[180px] rounded-[24px] overflow-hidden group cursor-pointer" style="box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
@@ -307,8 +330,8 @@
 </div>
 </section>
 <!-- Explore Quayside Section -->
-<section id="explore-section" class="dashboard-section">
-    <div class="section-header">
+<section id="explore-section" class="dashboard-section !mb-10">
+    <div class="section-header mb-5">
         <h2 class="text-xl font-bold">Explore Quayside</h2>
     </div>
     <div class="grid-container">
@@ -1111,9 +1134,12 @@ Mon, Jan 27 • 11:00 AM
 </div>
 </div>
 </section>
-<section class="px-5">
-<h2 class="text-2xl font-bold mb-4">Your Groups</h2>
-<div class="bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm">
+
+<section class="px-5 mb-10">
+    <div class="section-header mb-5">
+        <h2 class="text-2xl font-bold">Your Groups</h2>
+    </div>
+    <div class="bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700">
 <div class="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-700">
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
@@ -1152,37 +1178,40 @@ Mon, Jan 27 • 11:00 AM
 </div>
 </div>
 </section>
-<section class="px-5">
-<h2 class="text-2xl font-bold mb-4">Community Board</h2>
-<div class="space-y-3">
-<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
-<p class="text-gray-800 dark:text-gray-200 mb-3 text-sm leading-relaxed">Book club meeting this Thursday to discuss "The Midnight Library". See you all there!</p>
-<div class="flex items-center gap-2 text-xs">
-<a class="text-primary font-medium" href="#">Posted 3 Hrs Ago</a>
-<span class="text-gray-400">•</span>
-<span class="text-gray-500 dark:text-gray-400">12 Replies</span>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
-<p class="text-gray-800 dark:text-gray-200 mb-3 text-sm leading-relaxed">Is anyone free over the weekend to help me build an IKEA shelf?</p>
-<div class="flex items-center gap-2 text-xs">
-<a class="text-primary font-medium" href="#">Posted 8 Hrs Ago</a>
-<span class="text-gray-400">•</span>
-<span class="text-gray-500 dark:text-gray-400">3 Replies</span>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
-<p class="text-gray-800 dark:text-gray-200 mb-3 text-sm leading-relaxed">Thinking we need a gardening club. Would anybody be interested in joining?</p>
-<div class="flex items-center gap-2 text-xs">
-<a class="text-primary font-medium" href="#">Posted 9 Hrs Ago</a>
-<span class="text-gray-400">•</span>
-<span class="text-gray-500 dark:text-gray-400">28 Replies</span>
-</div>
-</div>
-</div>
+
+<section class="px-5 mb-10">
+    <div class="section-header mb-5">
+        <h2 class="text-2xl font-bold">Community Board</h2>
+    </div>
+    <div class="space-y-3">
+        <div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
+            <p class="text-gray-800 dark:text-gray-200 mb-3 text-sm leading-relaxed">Book club meeting this Thursday to discuss "The Midnight Library". See you all there!</p>
+            <div class="flex items-center gap-2 text-xs">
+                <a class="text-primary font-medium" href="#">Posted 3 Hrs Ago</a>
+                <span class="text-gray-400">•</span>
+                <span class="text-gray-500 dark:text-gray-400">12 Replies</span>
+            </div>
+        </div>
+        <div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
+            <p class="text-gray-800 dark:text-gray-200 mb-3 text-sm leading-relaxed">Is anyone free over the weekend to help me build an IKEA shelf?</p>
+            <div class="flex items-center gap-2 text-xs">
+                <a class="text-primary font-medium" href="#">Posted 8 Hrs Ago</a>
+                <span class="text-gray-400">•</span>
+                <span class="text-gray-500 dark:text-gray-400">3 Replies</span>
+            </div>
+        </div>
+        <div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
+            <p class="text-gray-800 dark:text-gray-200 mb-3 text-sm leading-relaxed">Thinking we need a gardening club. Would anybody be interested in joining?</p>
+            <div class="flex items-center gap-2 text-xs">
+                <a class="text-primary font-medium" href="#">Posted 9 Hrs Ago</a>
+                <span class="text-gray-400">•</span>
+                <span class="text-gray-500 dark:text-gray-400">28 Replies</span>
+            </div>
+        </div>
+    </div>
 </section>
-<section class="dashboard-section">
-<div class="section-header">
+<section class="dashboard-section !mb-10">
+<div class="section-header mb-5">
     <h2 class="text-xl font-bold">Community Guidelines</h2>
 </div>
 <div class="policies-list">
