@@ -94,8 +94,9 @@
 
         <!-- Join Button -->
         <section>
-            <button class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 rounded-2xl shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                Join Group
+            <button id="joinGroupBtn" class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 rounded-2xl shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-2">
+                <span id="joinBtnText">Join Group</span>
+                <span id="joinBtnLoader" class="material-icons-round animate-spin hidden">autorenew</span>
             </button>
         </section>
 
@@ -166,6 +167,21 @@
         </section>
     </main>
 
+    <!-- Loading Screen Overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+        <div class="bg-card-light dark:bg-card-dark rounded-3xl p-8 max-w-sm mx-4 text-center shadow-2xl">
+            <div class="mb-6">
+                <div class="w-16 h-16 mx-auto mb-4 relative">
+                    <div class="absolute inset-0 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                    <div class="absolute inset-2 border-4 border-primary/30 border-b-transparent rounded-full animate-spin" style="animation-direction: reverse; animation-duration: 0.8s;"></div>
+                </div>
+                <span class="material-icons-round text-primary text-5xl animate-pulse">group_add</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Joining Group</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Please wait while we add you to the group...</p>
+        </div>
+    </div>
+
     <!-- Bottom Navigation -->
     <nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-6 pb-4">
         <div class="flex justify-between items-center max-w-md mx-auto">
@@ -187,3 +203,4 @@
     <script src="group-detail.js"></script>
 </body>
 </html>
+
