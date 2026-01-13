@@ -73,3 +73,25 @@ if (groupName && groupData[groupName]) {
     // Default to GreenThumb Club if no valid group specified
     console.log('No valid group specified, showing default');
 }
+
+// Join Group Button Handler
+document.getElementById('joinGroupBtn').addEventListener('click', function() {
+    const btn = this;
+    const btnText = document.getElementById('joinBtnText');
+    const btnLoader = document.getElementById('joinBtnLoader');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    
+    // Disable button and show loading state
+    btn.disabled = true;
+    btn.classList.add('opacity-75', 'cursor-not-allowed');
+    btnText.textContent = 'Joining...';
+    btnLoader.classList.remove('hidden');
+    
+    // Show loading overlay
+    loadingOverlay.classList.remove('hidden');
+    
+    // Simulate loading for 2 seconds then redirect to group-member.html
+    setTimeout(() => {
+        window.location.href = 'group-member.html?group=' + groupName;
+    }, 2000);
+});
